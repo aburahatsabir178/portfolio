@@ -68,10 +68,15 @@
        HEADER / TOP BAR (From Code 1)
     ========================== */
 
-    header {
-      max-width: 1200px;
-      margin: 0 auto 20px;
-    }
+header {
+  position: sticky;      /* makes it stay in view while scrolling */
+  top: 0;                /* stick to very top */
+  z-index: 999;          /* keep it above other content */
+  background: #ffffff;   /* white background so content doesn't show through */
+  
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
 
     .top-bar {
       display: flex;
@@ -2299,3 +2304,4 @@
 </body>
 
 </html>
+
