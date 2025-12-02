@@ -1,2706 +1,715 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Abu Rahat Sabir | Executive Admin & Workflow Automation Specialist</title>
-
-  <meta name="description"
-      content="Executive Admin in Dhaka specialising in C-suite support, workflow design, and data automation. I help leaders save time by turning manual processes into reliable systems.">
-
-  <meta property="og:title" content="Abu Rahat Sabir | Executive Admin & Workflow Automation Specialist">
-  <meta property="og:description"
-      content="Executive Admin specialising in workflow design and data automation. I help leaders reduce manual work and build reliable systems.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aburahatsabir.github.io/portfolio/">
-  <meta property="og:image" content="https://aburahatsabir.github.io/portfolio/preview.webp">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Abu Rahat Sabir | Executive Admin & Workflow Automation Specialist">
-  <meta name="twitter:description"
-  content="Executive Admin specialising in C-suite support, workflow design, and automation. I help leaders save time by building reliable systems.">
-  <meta name="twitter:image" content="https://aburahatsabir.github.io/portfolio/preview.webp">
-
-  <link rel="icon" type="image/png" href="images/favicon.png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"
-  rel="stylesheet">
-
-  <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-  media="print"
-  onload="this.media='all'">
-
-<noscript>
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</noscript>
-
-
-  <style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-   :root {
-  /* Shared Theme Variables */
-  --accent: #FF5722;
-  --accent-strong: #FF4D00;
-  --accent-soft: rgba(255, 87, 34, 0.08);
-  --accent-soft-solid: #FFF3EB;
-  --accent-hover: #E64A19;
-
-  --bg-body: #ffffff;
-  --bg-soft: #f6f7fb;
-
-  --text-main: #111111;   /* default body text */
-  --text-strong: #222222; /* headings / key labels */
-  --text-muted: #6b6b6b;
-
-  --border: #eaeaea;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
-
-  /* Header + Layout Rhythm */
-  --header-height: 100px;
-  --section-gap-lg: 80px;
-  --section-gap-md: 60px;
-  --section-gap-sm: 40px;
-}
-
-
-html {
-  font-size: 16px; /* sets 1rem = 16px explicitly */
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--header-height);
-}
-
-
-/* Utility: consistent offset for in-page anchors */
-.anchor-section {
-  scroll-margin-top: calc(var(--header-height) + 8px);
-}
-
-@media (max-width: 768px) {
-  :root {
-    --header-height: 80px;
-  }
-}
-
-    body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 1.5rem 1rem var(--section-gap-lg); /* if you already applied the rem change */
-  background-color: var(--bg-body);
-  color: var(--text-main);
-  overflow-x: hidden;
-}
-
-
-    /* =========================
-       LAYOUT & SPACING SYSTEM
-       ========================= */
-
-    /* Base shell for all major sections */
-    .section-shell {
-      max-width: 1200px;
-      margin: 0 auto var(--section-gap-lg);
-    }
-
-    /* Utility spacing helpers – use these instead of inline styles */
-    .mb-lg { margin-bottom: var(--section-gap-md); }
-    .mt-lg { margin-top: var(--section-gap-md); }
-    .mt-md { margin-top: var(--section-gap-sm); }
-
-    /* Optional: last section can ignore bottom gap if you want tighter footer */
-    .section-shell:last-of-type {
-      margin-bottom: 0;
-    }
-
-    /* Reveal animation base */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* -----------------------------------------------------------
-       ACCESSIBILITY
-       ----------------------------------------------------------- */
-
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .reveal {
-        transition: none;
-        opacity: 1;
-        transform: none;
-      }
-
-      .hand-icon {
-        animation: none;
-      }
-
-      .marquee-content {
-        animation: none;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
-
-    /* =========================
-       HEADER / TOP BAR
-       ========================= */
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
-      width: 100%;
-      margin: 0;
-      padding: 10px 0;
-    }
-
-    .top-bar {
-      max-width: 1200px;
-      margin: 0 auto;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 6px 20px;
-      gap: 24px;
-      flex-wrap: wrap;
-    }
-
-      .logo-circle {
-      width: 50px;
-      height: 50px;
-      background-color: var(--accent-strong);
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      font-weight: 700;
-      flex-shrink: 0;
-      text-decoration: none;
-    }
-
-    .top-nav {
-      display: flex;
-      gap: 18px;
-      font-size: 14px;
-      font-weight: 500;
-      flex-wrap: wrap;
-    }
-
-    .top-nav a {
-  text-decoration: none;
-  color: #333;
-  padding: 8px 12px;   /* slightly larger hit area */
-  border-radius: 999px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-
-    .top-nav a:hover {
-      background: rgba(255, 87, 34, 0.08);
-      color: var(--accent);
-    }
-
-    .btn-resume {
-      background-color: transparent;
-      border: 2px solid #FF4D00;
-      padding: 10px 22px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #111;
-      text-decoration: none;
-      transition: 0.3s;
-      white-space: nowrap;
-    }
-
-    .btn-resume:hover {
-      background-color: #FF4D00;
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    /* =========================
-       HERO SECTION
-       ========================= */
-
-    .hero-section {
-      padding-top: 40px;
-      padding-bottom: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-      min-height: auto;
-    }
-
-    .hero-left {
-      flex: 1;
-      max-width: 600px;
-    }
-
-    .hero-right {
-      flex: 1;
-      display: flex;
-      justify-content: flex-end;
-      position: relative;
-    }
-
-    .hero-image {
-      width: 100%;
-      max-width: 450px;
-      border-radius: 30px;
-      object-fit: cover;
-      box-shadow: 20px 20px 0px rgba(255, 87, 34, 0.1);
-      transition: var(--transition);
-    }
-
-    .hero-image:hover {
-      transform: scale(1.02);
-      box-shadow: 25px 25px 0px rgba(255, 87, 34, 0.2);
-    }
-
-   .hero-section h1 {
-  font-size: 3.5rem;
-  font-weight: 900;
-  margin: 0 0 10px 0;
-  letter-spacing: -2px;
-  line-height: 1.1;
-  color: var(--text-strong); /* was #111 / var(--text-main) */
-}
-
-
-    .hand-icon {
-      width: 48px;
-      display: inline-block;
-      margin-left: 10px;
-      animation: wave 2.5s infinite;
-      transform-origin: 70% 70%;
-    }
-
-    @keyframes wave {
-      0% { transform: rotate(0deg); }
-      10% { transform: rotate(14deg); }
-      20% { transform: rotate(-8deg); }
-      30% { transform: rotate(14deg); }
-      40% { transform: rotate(-4deg); }
-      50% { transform: rotate(10deg); }
-      60% { transform: rotate(0deg); }
-      100% { transform: rotate(0deg); }
-    }
-
-    .hero-section .subtitle {
-      font-size: 3rem; /* 48px / 16 ≈ 3.0rem */
-      font-weight: 800;
-      line-height: 1.1;
-      margin: 0 0 24px 0;
-      background: linear-gradient(90deg, #111, #555);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-section .description {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 520px;
-      margin-bottom: 30px;
-      line-height: 1.6;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-
-    .section-tag {
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 700;
-      font-size: 12px;
-      color: var(--accent);
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .btn-primary-hero {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 32px;
-      border-radius: 99px;
-      background: var(--accent);
-      color: #fff;
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
-      transition: var(--transition);
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary-hero:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 15px 30px rgba(255, 87, 34, 0.3);
-    }
-
-    .btn-secondary-hero {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 32px;
-      border-radius: 99px;
-      background: #fff;
-      color: var(--text-main);
-      font-size: 15px;
-      font-weight: 600;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      transition: var(--transition);
-    }
-
-    .btn-secondary-hero:hover {
-      border-color: var(--text-main);
-      background: var(--bg-soft);
-    }
-
-    .social-strip {
-  display: flex;
-  gap: 20px;
-  border-top: 1px solid var(--border);
-  padding-top: 25px;
-}
-
-.social-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  color: var(--text-muted);
-  font-size: 20px;
-  transition: var(--transition);
-  border-radius: 999px;
-}
-
-/* Match hover and keyboard focus */
-.social-link:hover,
-.social-link:focus-visible {
-  color: var(--accent);
-  transform: translateY(-3px);
-  outline: none;
-}
-
-
-    /* =========================
-       ABOUT
-       ========================= */
-
-    .about-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 1200px;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 0;
-      box-shadow: none;
-      margin: 0 auto;
-      gap: 24px;
-    }
-
-    .about-left {
-      flex: 2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px 20px 20px 0;
-    }
-
-    .about-left img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      object-fit: cover;
-    }
-
-    .about-right {
-      flex: 3;
-      max-width: 700px;
-      color: #333;
-      background-color: rgba(0, 0, 0, 0.02);
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    .header-left h2 {
-  font-size: 48px;
-  font-weight: 900;
-  margin: 0;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  color: var(--text-strong); /* was #1a1a1a */
-}
-
-
-    .about-right h2 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #777;
-      margin-top: 16px;
-    }
-
-    .about-right p {
-      font-size: 16px;
-      line-height: 1.7;
-      color: #555;
-      font-weight: 300;
-      margin-bottom: 16px;
-    }
-
-    .about-right strong {
-      color: #333;
-      font-weight: 600;
-    }
-
-    .quote {
-      font-style: italic;
-      color: #333;
-      border-left: 4px solid #FF5722;
-      padding-left: 15px;
-      margin-top: 16px;
-    }
-
-    .about-top-line {
-      width: 60%;
-      height: 4px;
-      background-color: #FF5722;
-      margin-bottom: 16px;
-    }
-
-    /* =========================
-       STATS SECTION
-       ========================= */
-
-    .stats-section {
-      background: var(--bg-soft);
-      padding: 40px 0;
-      border-radius: 20px;
-      margin: 0 auto var(--section-gap-md);
-      width: 100%;
-    }
-
-    .stats-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      text-align: center;
-    }
-
-    .stat-item {
-      flex: 1 1 150px;
-    }
-
-    .stat-number {
-      font-size: 48px;
-      font-weight: 900;
-      color: var(--accent);
-      margin-bottom: 5px;
-      display: block;
-      line-height: 1.1;
-    }
-
-    .stat-label {
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-    }
-
-    /* =========================
-       EXPERIENCE TIMELINE
-       ========================= */
-
-    .timeline-container {
-      width: 100%;
-      max-width: 1100px;
-      background:#ffffff;
-      border-radius: 18px;
-      padding: 40px 40px 50px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.04);
-      margin: 0 auto;
-    }
-
-    .exp-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 40px;
-      position: relative;
-      z-index: 1;
-      border-bottom: 1px solid #f0f0f0;
-      padding-bottom: 20px;
-    }
-
-    .exp-header-left h2 {
-      font-size: 52px;
-      font-weight: 900;
-      margin: 0;
-      line-height: 1;
-      letter-spacing: -1px;
-      color: #111;
-    }
-
-    .timeline-item {
-      display: flex;
-      position: relative;
-      padding: 18px 0;
-      border-radius: 14px;
-      transition: background 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
-    }
-
-    .timeline-item + .timeline-item {
-      margin-top: 14px;
-    }
-
-    .timeline-item:hover {
-      background:#fafafa;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.03);
-      transform: translateY(-2px);
-    }
-
-    .col-date {
-      flex: 0 0 220px;
-      text-align: right;
-      padding-right: 32px;
-    }
-
-    .date-text {
-      font-size: 26px;
-      font-weight: 800;
-      color: #111;
-      margin-bottom: 4px;
-      line-height: 1.1;
-    }
-
-    .role-label {
-      font-size: 13px;
-      font-weight: 600;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 0.09em;
-    }
-
-    .col-line {
-      position: relative;
-      width: 40px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .line-graphic {
-      position: absolute;
-      top: -40px;
-      bottom: -40px;
-      width: 2px;
-      background-color: #f0f0f0;
-      z-index: 0;
-    }
-
-    .dot {
-      width: 16px;
-      height: 16px;
-      background-color: #fff;
-      border: 3px solid #ddd;
-      border-radius: 50%;
-      z-index: 2;
-      margin-top: 6px;
-      transition: all 0.25s ease;
-    }
-
-    .timeline-item:hover .dot {
-      border-color:#FF5722;
-      box-shadow: 0 0 0 4px rgba(255,87,34,0.12);
-    }
-
-    .dot.active {
-      border-color: #FF5722;
-      background-color: #FF5722;
-      box-shadow: 0 0 0 6px rgba(255, 87, 34, 0.20);
-    }
-
-    .col-details {
-      flex: 1;
-      padding-left: 32px;
-      min-width: 0;
-    }
-
-    .company-name {
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--text-strong);
-  margin: 0 0 4px 0;
-}
-
-    .location-row {
-      display:flex;
-      align-items:center;
-      gap:10px;
-      margin-bottom: 10px;
-      flex-wrap: wrap;
-    }
-
-    .location {
-        display: inline-block;
-        font-size: 12px;
-        font-weight: 600;
-        color: var(--accent);
-        background: var(--accent-soft);
-        padding: 4px 10px;
-        border-radius: 999px;
-      }
-
-
-    .meta-tag {
-      font-size: 12px;
-      color:#777;
-    }
-
-    .timeline-description {
-      font-size: 14px;
-      line-height: 1.7;
-      color: #555;
-      margin: 0;
-    }
-
-    .timeline-description ul {
-      margin: 8px 0 0 0;
-      padding-left: 18px;
-    }
-
-    .timeline-description li {
-      margin-bottom: 6px;
-    }
-
-    /* =========================
-       EDUCATION & SKILLS
-       ========================= */
-
-    .edu-wrapper {
-      width: 100%;
-      max-width: 1100px;
-      background: #ffffff;
-      padding: 60px 20px 80px;
-      position: relative;
-      margin: 0 auto;
-      overflow: hidden; /* Prevents decoration-ring from causing horizontal scroll */
-    }
-
-    .decoration-ring {
-      position: absolute;
-      top: -50px;
-      left: -50px;
-      width: 200px;
-      height: 200px;
-      border: 30px solid #FF5722;
-      border-radius: 50%;
-      opacity: 0.1;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .decoration-ring::after {
-      content: '';
-      position: absolute;
-      top: -20px;
-      left: -20px;
-      right: -20px;
-      bottom: -20px;
-      border: 4px solid #FF5722;
-      border-radius: 50%;
-      opacity: 0.3;
-    }
-
-    .header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 60px;
-      position: relative;
-      z-index: 1;
-      border-bottom: 1px solid #f0f0f0;
-      padding-bottom: 20px;
-    }
-
-    .header-left h2 {
-      font-size: 48px;
-      font-weight: 900;
-      margin: 0;
-      line-height: 1.1;
-      letter-spacing: -1px;
-      color: #1a1a1a;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      column-gap: 80px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 14px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #222;
-      margin-bottom: 30px;
-    }
-
-    .section-label i {
-      color: #FF5722;
-      font-size: 18px;
-    }
-
-    .edu-list {
-      position: relative;
-    }
-
-    .edu-list::before {
-      content: '';
-      position: absolute;
-      left: 12px;
-      top: 10px;
-      bottom: 20px;
-      width: 2px;
-      background: #f0f0f0;
-      z-index: 0;
-    }
-
-    .edu-item {
-      position: relative;
-      padding-left: 45px;
-      margin-bottom: 50px;
-    }
-
-    .edu-bullet {
-      position: absolute;
-      left: 0;
-      top: 4px;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      border: 2px solid #FF5722;
-      background: #fff;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .edu-bullet::after {
-      content: '';
-      width: 10px;
-      height: 10px;
-      background: #FF5722;
-      border-radius: 50%;
-    }
-
-    .edu-year {
-      font-size: 14px;
-      font-weight: 800;
-      color: #FF5722;
-      margin-bottom: 4px;
-      display: block;
-    }
-
-    .edu-degree {
-      font-size: 20px;
-      font-weight: 800;
-      margin-bottom: 6px;
-      line-height: 1.2;
-      color: #111;
-    }
-
-    .edu-school {
-      font-size: 15px;
-      font-weight: 600;
-      color: #555;
-      margin-bottom: 10px;
-    }
-
-    .edu-detail {
-      font-size: 14px;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .skill-card {
-      background: #ffffff;
-      border: 1px solid #f0f0f0;
-      border-radius: 20px;
-      padding: 35px 20px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-    }
-
-    .skill-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(255, 87, 34, 0.15);
-      border-color: #FF5722;
-      background: #FFF3EB;
-    }
-
-    .icon-box {
-      width: 60px;
-      height: 60px;
-      border-radius: 18px;
-      background: var(--accent-soft-solid);
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      margin-bottom: 20px;
-      transition: transform 0.3s, background 0.3s, color 0.3s;
-    }
-
-    .skill-card:hover .icon-box {
-      transform: scale(1.1) rotate(5deg);
-      background: #FF5722;
-      color: #fff;
-    }
-
-    .skill-title {
-      font-size: 18px;
-      font-weight: 800;
-      color: #222;
-      margin-bottom: 8px;
-    }
-
-    .skill-list {
-      font-size: 13px;
-      color: #777;
-      line-height: 1.4;
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
-
-    .dots {
-      display: flex;
-      gap: 6px;
-      justify-content: center;
-    }
-
-    .dot-basic {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #eee;
-    }
-
-    .dot-basic.active {
-      background: #FF5722;
-    }
-
-    .dot-basic.half {
-      background: linear-gradient(90deg, #FF5722 50%, #eee 50%);
-    }
-
-    /* =========================
-       HOW I WORK
-       ========================= */
-
-    .process-wrapper {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .process-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 50px;
-      padding-bottom: 20px;
-      border-bottom: 2px solid #f5f5f5;
-    }
-
-    .process-title-group h2 {
-      font-size: 48px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      margin: 0;
-      color: #1a1a1a;
-    }
-
-    .process-title-group .sub {
-      margin-top: 15px;
-      font-size: 16px;
-      color: var(--text-muted);
-      max-width: 600px;
-      line-height: 1.6;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .step-card {
-      position: relative;
-      background: #ffffff;
-      border-radius: 24px;
-      padding: 32px 24px;
-      border: 1px solid #f0f0f0;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      height: 100%;
-    }
-
-    .step-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-      border-color: var(--accent);
-    }
-
-    .step-card .icon-box {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      background: var(--accent-soft);
-      font-size: 24px;
-      margin-bottom: 24px;
-    }
-
-    .step-card:hover .icon-box {
-      transform: scale(1.1) rotate(-5deg);
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .step-number {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-      display: block;
-    }
-
-    .step-card:hover .step-number {
-      color: var(--accent);
-    }
-
-    .step-title {
-      font-size: 20px;
-      font-weight: 800;
-      margin: 0 0 12px 0;
-      color: #222;
-    }
-
-    .step-text {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text-muted);
-      margin: 0;
-    }
-
-    /* =========================
-       WHAT I DO
-       ========================= */
-
-    .what-wrapper {
-      width:100%;
-      max-width:1100px;
-      background:var(--bg-soft);
-      border-radius:24px;
-      padding:50px 48px 56px;
-      display:grid;
-      grid-template-columns:minmax(0,1.05fr) minmax(0,1.4fr);
-      gap:60px;
-      margin: 0 auto;
-    }
-
-    .what-title {
-      font-size: 40px;
-      font-weight: 900;
-      margin: 0 0 16px;
-      letter-spacing: -1px;
-    }
-
-    .what-left p{
-      margin:0 0 14px;
-      font-size:15px;
-      line-height:1.8;
-      color:var(--text-muted);
-      max-width:490px;
-    }
-
-    .what-left p strong{
-      color:var(--text-main);
-      font-weight:600;
-    }
-
-    .cta-row{
-      margin-top:30px;
-    }
-
-    .btn-primary-block{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 26px;
-      border-radius:999px;
-      border:none;
-      background:var(--accent);
-      color:#fff;
-      font-size:14px;
-      font-weight:700;
-      cursor:pointer;
-      text-decoration:none;
-      box-shadow:0 10px 24px rgba(255,87,34,0.35);
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
-    }
-
-    .btn-primary-block i{
-      font-size:14px;
-    }
-
-    .btn-primary-block:hover{
-      transform:translateY(-2px);
-      box-shadow:0 14px 32px rgba(255,87,34,0.45);
-      background:#ff4100;
-    }
-
-    .what-right{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
-
-    .service-card{
-      background:#ffffff;
-      border-radius:18px;
-      padding:22px 24px 20px;
-      box-shadow:0 10px 28px rgba(0,0,0,0.04);
-      border:1px solid #ececec;
-      display:grid;
-      grid-template-columns:auto minmax(0,1fr);
-      column-gap:18px;
-      align-items:flex-start;
-      transition:box-shadow .2s ease, transform .18s ease, border-color .2s ease;
-    }
-
-    .service-card:hover{
-      transform:translateY(-4px);
-      border-color:var(--accent);
-      box-shadow:0 18px 38px rgba(255,87,34,0.15);
-    }
-
-          .service-icon{
-        width:42px;
-        height:42px;
-        border-radius:14px;
-        background:var(--accent-soft);
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        color:var(--accent);
-        font-size:18px;
-        margin-top:4px;
-      }
-
-
-    .service-title{
-      font-size:18px;
-      font-weight:800;
-      margin:0 0 6px;
-    }
-
-    .service-text{
-      font-size:14px;
-      line-height:1.7;
-      color:var(--text-muted);
-      margin:0;
-    }
-
-    /* =========================
-       TRUSTED PARTNERS
-       ========================= */
-
-    .partners-shell {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .header-section {
-      text-align: center;
-      margin-bottom: 50px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .header-section h2 {
-      font-size: 32px;
-      font-weight: 800;
-      color: #1a1a1a;
-      margin: 0 0 15px 0;
-      letter-spacing: -0.5px;
-    }
-
-    .header-section p {
-      font-size: 16px;
-      color: #666;
-      line-height: 1.6;
-      margin: 0;
-    }
-
-    .marquee-container {
-      width: 100%;
-      max-width: 1200px;
-      overflow: hidden;
-      position: relative;
-      background: #fff;
-      padding: 10px 0;
-      margin: 0 auto;
-    }
-
-    .marquee-container::before,
-    .marquee-container::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 150px;
-      height: 100%;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .marquee-container::before {
-      left: 0;
-      background: linear-gradient(to right, #ffffff 10%, transparent 100%);
-    }
-
-    .marquee-container::after {
-      right: 0;
-      background: linear-gradient(to left, #ffffff 10%, transparent 100%);
-    }
-
-    .marquee-content {
-      display: flex;
-      width: max-content;
-      animation: scroll 40s linear infinite;
-    }
-
-    .marquee-content:hover,
-    .marquee-content:focus-within {
-      animation-play-state: paused;
-    }
-
-    .logo-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 50px;
-      height: 90px;
-    }
-
-    .logo-item img {
-  width: 160px;      /* fixed width */
-  height: 50px;      /* fixed height */
-  object-fit: contain;
-  filter: grayscale(100%);
-  opacity: 0.5;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: pointer;
-}
-
-
-    .logo-item img:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.1);
-    }
-
-    @keyframes scroll {
-      0%    { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .ele-section {
-      max-width: 900px;
-      margin: 0 auto var(--section-gap-lg);
-      text-align: left;
-    }
-
-    .ele-kicker {
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .ele-title {
-      font-size: 32px;
-      font-weight: 900;
-      margin: 0 0 14px;
-      letter-spacing: -0.5px;
-    }
-
-    .ele-text {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--text-muted);
-      margin: 0 0 10px;
-    }
-
-    /* =========================
-       CONTACT
-       ========================= */
-
-    .contact-wrapper {
-      width: 100%;
-      max-width: 1100px;
-      background: #ffffff;
-      border-radius: 28px;
-      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.10);
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.1fr);
-      margin: 0 auto;
-    }
-
-    .contact-left {
-      padding: 42px 44px 46px;
-      background: var(--accent-soft-solid);
-      position: relative;
-    }
-
-
-    .contact-left::after {
-      content: "";
-      position: absolute;
-      right: -60px;
-      bottom: -60px;
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 18px solid rgba(255, 87, 34, 0.18);
-      opacity: 0.9;
-    }
-
-    .contact-kicker {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-
-    .contact-title {
-      font-size: 40px;
-      font-weight: 900;
-      margin: 0 0 16px;
-      letter-spacing: -1.2px;
-    }
-
-    .contact-sub, .contact-note {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--text-muted);
-      max-width: 440px;
-      margin-bottom: 22px;
-    }
-
-    .contact-badge-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .contact-badge {
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 11px;
-      font-weight: 600;
-      background: #ffffff;
-      border: 1px solid rgba(255, 87, 34, 0.40);
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-    }
-
-    .contact-right {
-      padding: 42px 40px 30px;
-      background: #ffffff;
-      display: flex;
-      flex-direction: column;
-      row-gap: 28px;
-    }
-
-    .contact-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .info-card {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 16px;
-      align-items: center;
-      background: #ffffff;
-      border-radius: 18px;
-      padding: 16px 18px;
-      border: 1px solid #ececf2;
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.04);
-      transition: 0.18s ease;
-    }
-
-    .info-card:hover {
-      transform: translateY(-3px);
-      border-color: var(--accent);
-      box-shadow: 0 18px 40px rgba(255, 87, 34, 0.14);
-    }
-
-    .info-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      background: rgba(255, 87, 34, 0.06);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 18px;
-    }
-
-    .info-label {
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      color: #9ca3af;
-      margin-bottom: 4px;
-      text-transform: uppercase;
-    }
-
-    .info-value {
-      font-size: 15px;
-      font-weight: 600;
-      color: #151515;
-      text-decoration: none;
-      word-break: break-word;
-    }
-
-    .info-value:hover {
-      color: var(--accent);
-    }
-
-    .social-row {
-      border-top: 1px solid #ececf2;
-      padding-top: 18px;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .social-label {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 14px;
-    }
-
-   .social-links a {
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  border: 1px solid #e5e7eb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #151515;
-  transition: 0.2s ease;
-}
-
-/* Hover + keyboard focus get the same strong feedback */
-.social-links a:hover,
-.social-links a:focus-visible {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
-  transform: translateY(-2px);
-  outline: none; /* we replace the default outline with this strong state */
-}
-
-
-    /* =========================
-       FOOTER
-       ========================= */
-
-    .ars-footer {
-      width: 100%;
-      max-width: 1200px;
-      margin: var(--section-gap-lg) auto 0;
-      padding: 40px 20px 40px;
-      font-family: "Inter", sans-serif;
-      color: var(--text-main);
-    }
-
-    .ars-footer-grid {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 1fr;
-      gap: 50px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .ars-footer-logo-block {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .ars-footer-logo {
-      height: 48px;
-      width: auto;
-      object-fit: contain;
-    }
-
-    .ars-footer-title {
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 20px;
-    }
-
-    .ars-footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-
-    .ars-footer-links a {
-      font-size: 15px;
-      text-decoration: none;
-      color: var(--text-muted);
-      transition: color 0.18s ease;
-    }
-
-    .ars-footer-links a:hover {
-      color: var(--accent);
-    }
-
-    .ars-footer-bottom {
-      padding-top: 22px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    /* Screen-reader only utility */
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      border: 0;
-      white-space: nowrap;
-    }
-
-    .skip-link {
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  padding: 8px 12px;
-  background: #000;
-  color: #fff;
-  border-radius: 999px;
-  font-size: 0.875rem;
-  transform: translateY(-150%);
-  transition: transform 0.2s ease;
-  z-index: 1000;
-}
-
-/* Only becomes visible when focused with keyboard */
-.skip-link:focus-visible {
-  transform: translateY(0);
-}
-
-
-    /* =========================
-       RESPONSIVE
-       ========================= */
-
-    @media (max-width: 1024px) {
-      .hero-section {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 20px;
-      }
-
-      .hero-right {
-        justify-content: center;
-      }
-
-      .hero-cta-group {
-        justify-content: center;
-      }
-
-      .about-container {
-        flex-direction: column;
-        padding: 20px;
-      }
-
-      .about-left {
-        padding: 10px;
-      }
-
-      .about-left img {
-        max-width: 80%;
-        margin-bottom: 20px;
-      }
-
-      .about-right {
-        padding-left: 0;
-      }
-
-      .content-grid {
-        grid-template-columns: 1fr;
-        row-gap: 60px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .steps-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .what-wrapper {
-        grid-template-columns:1fr;
-        gap:36px;
-        padding:32px 24px 40px;
-        border-radius:18px;
-      }
-
-      .what-left h2{
-        font-size:32px;
-      }
-
-      .contact-wrapper {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-title {
-        font-size: 32px;
-      }
-
-      .contact-left::after {
-        display: none;
-      }
-
-      .timeline-container {
-        padding: 32px 24px 40px;
-      }
-
-      .col-date {
-        flex: 0 0 180px;
-      }
-    }
-
-    @media (max-width: 768px) {
-
-      body {
-        padding: 16px 10px var(--section-gap-md);
-      }
-
-      /* Slightly tighter vertical rhythm on mobile */
-      .section-shell {
-        margin-bottom: var(--section-gap-md);
-      }
-
-      .top-bar {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .top-nav {
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-bottom: 15px;
-      }
-
-      .btn-resume {
-        width: 100%;
-        text-align: center;
-      }
-
-      .hero-section {
-        flex-direction: column;
-        padding-top: 40px;
-        padding-bottom: 30px;
-        gap: 30px;
-        text-align: center;
-      }
-
-      .hero-section h1 {
-        font-size: 36px;
-      }
-
-      .hero-section .subtitle {
-        font-size: 28px;
-      }
-
-      .hero-image {
-        width: 70%;
-        max-width: 280px;
-        margin: 0 auto;
-      }
-
-      .stats-container {
-        gap: 30px;
-      }
-
-      .stat-number {
-        font-size: 42px;
-      }
-
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .logo-item {
-        padding: 0 30px;
-      }
-
-      .marquee-container::before,
-      .marquee-container::after {
-        width: 80px;
-      }
-
-      .header-section h2 {
-        font-size: 28px;
-      }
-
-      .ars-footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .ars-footer-logo-block {
-        align-items: center;
-        grid-column: span 1;
-      }
-
-      .timeline-item {
-        flex-direction: column;
-      }
-
-      .col-date {
-        text-align: left;
-        padding-right: 0;
-        margin-bottom: 8px;
-      }
-
-      .col-line {
-        display: none;
-      }
-
-      .col-details {
-        padding-left: 0;
-      }
-    }
-  </style>
+    <!-- SEO Meta Tags -->
+    <title>Abu Rahat Sabir | Executive Admin & Workflow Automation Specialist</title>
+    <meta name="description" content="Executive Admin specialising in C-suite support, workflow design, and data automation. I help leaders save time by turning manual processes into reliable systems." />
+    <meta name="author" content="Abu Rahat Sabir" />
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Abu Rahat Sabir | Strategic Architect" />
+    <meta property="og:description" content="Executive Admin & Automation Specialist. I engineer time for leadership teams." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1000&auto=format&fit=crop" />
+
+    <!-- Favicon (Placeholder) -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" />
+
+    <!-- Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Tailwind CSS (CDN for standalone file) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            orange: '#FF5722',
+                            dark: '#FF4D00',
+                            light: '#FFF3EB',
+                        },
+                        dark: {
+                            900: '#111111',
+                            800: '#1A1A1A',
+                            700: '#2D2D2D',
+                        }
+                    },
+                    animation: {
+                        'wave': 'wave 2.5s infinite',
+                        'scroll': 'scroll 40s linear infinite',
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%, 100%': { transform: 'rotate(0deg)' },
+                            '10%, 30%': { transform: 'rotate(14deg)' },
+                            '20%, 40%': { transform: 'rotate(-8deg)' },
+                            '50%': { transform: 'rotate(10deg)' },
+                            '60%': { transform: 'rotate(0deg)' },
+                        },
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        /* Smooth Reveal Animation Classes */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal-section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Timeline Graphics */
+        .timeline-line {
+            background: linear-gradient(to bottom, #FF5722 0%, #e2e8f0 100%);
+        }
+    </style>
 </head>
 
-<body>
-
-  <a href="#home" class="skip-link">Skip to main content</a>
-
-  <header>
-    <div class="top-bar">
-      <a href="#home" class="logo-circle" aria-label="Back to top">A</a>
-
-      <nav class="top-nav">
-        <a href="#home">Home</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <a href="AbuRahatSabir-Resume.pdf"
-         class="btn-resume"
-         target="_blank"
-         rel="noopener noreferrer">
-         Download Resume
-      </a>
-    </div>
-  </header>
-
-  <main>
-
-    <section class="section-shell hero-section anchor-section" id="home">
-      <div class="hero-left reveal">
-        <span class="section-tag">Welcome to my portfolio</span>
-        <h1>Hi, I'm Rahat
-          <picture>
-            <source srcset="images/hand.webp" type="image/webp">
-            <img
-                  src="images/hand.webp"
-                  alt=""
-                  class="hand-icon"
-                  aria-hidden="true"
-                  width="48"
-                  height="48">
-          </picture>
-        </h1>
-
-        <div class="subtitle">Strategic Architect.</div>
-        <p class="description">
-  I engineer time. By merging executive operations with automation, I remove 
-  repetitive work, reduce errors, and build systems that help leaders focus 
-  on what truly matters.
-</p>
-
-
-        <div class="hero-cta-group">
-          <a href="#contact" class="btn-primary-hero">Let's Talk <i class="fas fa-arrow-right"></i></a>
-          <a href="#experience" class="btn-secondary-hero">View Work</a>
-        </div>
-
-        <div class="social-strip">
-          <a href="https://linkedin.com/in/aburahatsabir78"
-             class="social-link"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-
-          <a href="https://github.com/aburahatsabir"
-             class="social-link"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-
-          <a href="https://x.com/AbuRahatsabir"
-             class="social-link"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Twitter X">
-            <i class="fab fa-twitter"></i>
-          </a>
-
-          <a href="https://www.instagram.com/aburahat.sabir/"
-             class="social-link"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-
-          <a href="https://facebook.com/aburahatsabir.178"
-             class="social-link"
-             target="_blank"
-             rel="noopener noreferrer"
-             aria-label="Facebook">
-            <i class="fab fa-facebook"></i>
-          </a>
-        </div>
-      </div>
-
-      <div class="hero-right reveal">
-        <img
-          src="images/hero.webp"
-          alt="Abu Rahat Sabir – Executive Admin & Automation Specialist"
-          class="hero-image"
-          fetchpriority="high"
-          decoding="async"
-          loading="eager"
-          width="450"
-          height="600">
-      </div>
-    </section>
-
-    <section class="section-shell">
-      <div class="stats-section reveal">
-        <div class="stats-container">
-          <div class="stat-item">
-            <span class="stat-number" data-target="6" data-suffix="+">0</span>
-            <span class="stat-label">Years Experience</span>
-          </div>
-
-          <div class="stat-item">
-            <span class="stat-number" data-target="650" data-suffix="+">0</span>
-            <span class="stat-label">Students Mentored</span>
-          </div>
-
-          <div class="stat-item">
-            <span class="stat-number" data-target="40" data-suffix="+">0</span>
-            <span class="stat-label">Automations</span>
-          </div>
-
-          <div class="stat-item">
-            <span class="stat-number" data-target="165" data-suffix="+">0</span>
-            <span class="stat-label">Clients Happy</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section-shell mb-lg anchor-section">
-      <div class="about-container reveal">
-        <div class="about-left">
-          <picture>
-            <source srcset="images/about.webp" type="image/webp">
-            <img src="images/about.webp"
-     alt="Rahat working with digital tools"
-     width="400"
-     height="500"
-     loading="lazy"
-     style="height:auto;">
-
-          </picture>
-        </div>
-
-        <div class="about-right">
-          <div class="about-top-line"></div>
-          <h2>ABOUT.</h2>
-          <h3>Part strategy, part coordination, and part digital problem-solving.</h3>
-
-          <p>
-            For the past several years, I’ve worked at the intersection of administration and technology.
-            Today, I serve as an <strong>Executive Admin at Prominent Tec in Dhaka</strong>.
-          </p>
-
-          <p>
-            I support executive-level operations—managing schedules, preparing decision-ready reports,
-            organizing financial and HR files, and handling sensitive communications. But what really
-            excites me is <strong>automation</strong>. I love taking a slow, manual process and rebuilding it
-            into something fast, accurate, and automated using Excel VBA, Google Sheets, and Apps Script.
-          </p>
-
-          <p>
-            Before moving into corporate administration, I taught ICT in Sylhet and mentored over 650 students.
-            That teaching experience still shapes how I work today: I enjoy showing teams how digital tools
-            can save hours of effort and reduce errors. I also run <strong>E-LearnEx</strong>, a community that
-            has helped tens of thousands of learners gain access to global education resources.
-          </p>
-
-          <p class="quote">
-            "If there’s a more efficient way to do something, I’ll find it—and if not, I’ll build one."
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section-shell mt-lg anchor-section">
-      <div class="timeline-container reveal">
-        <div class="exp-header-row">
-          <div class="exp-header-left">
-            <h2>Experience.</h2>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="col-date">
-            <div class="date-text">2025–Present</div>
-            <div class="role-label">Executive Admin</div>
-          </div>
-
-          <div class="col-line">
-            <div class="line-graphic"></div>
-            <div class="dot active"></div>
-          </div>
-
-          <div class="col-details">
-            <h3 class="company-name">Prominent Tec</h3>
-            <div class="location-row">
-              <span class="location">Gulshan, Dhaka</span>
-              <span class="meta-tag">Full-time · C-suite Support & Automation</span>
-            </div>
-            <div class="timeline-description">
-              <ul>
-                <li>Proactively manage complex C-suite schedules, multi-national travel, and confidential communications.</li>
-                <li>Prepare board materials, strategic reports, and high-impact executive presentations.</li>
-                <li>Oversee HR operations, IT support and financial administration, introducing automation to reduce manual work.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="col-date">
-            <div class="date-text">2022–2024</div>
-            <div class="role-label">Chief Instructor</div>
-          </div>
-
-          <div class="col-line">
-            <div class="line-graphic"></div>
-            <div class="dot"></div>
-          </div>
-
-          <div class="col-details">
-            <h3 class="company-name">Dreams IT Park</h3>
-            <div class="location-row">
-              <span class="location">Shibgonj, Sylhet</span>
-              <span class="meta-tag">Full-time · Training & Academic Operations</span>
-            </div>
-            <div class="timeline-description">
-              <ul>
-                <li>Directed end-to-end curriculum cycles for multiple technical programs.</li>
-                <li>Managed logistics, resource allocation and academic compliance.</li>
-                <li>Mentored 650+ learners with strong completion and placement outcomes.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="col-date">
-            <div class="date-text">2020–2021</div>
-            <div class="role-label">Chief Instructor</div>
-          </div>
-
-          <div class="col-line">
-            <div class="line-graphic"></div>
-            <div class="dot"></div>
-          </div>
-
-          <div class="col-details">
-            <h3 class="company-name">I-Con Computer Institute</h3>
-            <div class="location-row">
-              <span class="location">Tilagor, Sylhet</span>
-              <span class="meta-tag">Full-time · Lab & Instruction Lead</span>
-            </div>
-            <div class="timeline-description">
-              <ul>
-                <li>Redesigned core curriculum, improving learning outcomes by ~30%.</li>
-                <li>Oversaw lab operations and IT assets, ensuring safe, efficient workflows.</li>
-                <li>Conducted continuous assessments and mentoring to build career readiness.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="col-date">
-            <div class="date-text">2020–Present</div>
-            <div class="role-label">Founder</div>
-          </div>
-
-          <div class="col-line">
-            <div class="line-graphic"></div>
-            <div class="dot"></div>
-          </div>
-
-          <div class="col-details">
-            <h3 class="company-name">E-LearnEx</h3>
-            <div class="location-row">
-              <span class="location">Remote Community</span>
-              <span class="meta-tag">Online · Education Access</span>
-            </div>
-            <div class="timeline-description">
-              <ul>
-                <li>Founded a digital learning community reaching 30,000+ members.</li>
-                <li>Enabled access to Coursera, Udemy, edX and global learning resources.</li>
-                <li>Formed partnerships and ran campaigns supporting diverse learners.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="education" class="section-shell mt-md anchor-section">
-      <div class="edu-wrapper reveal">
-        <div class="decoration-ring"></div>
-
-        <div class="header-row">
-          <div class="header-left">
-            <h2>Education & Skills</h2>
-          </div>
-          <div class="header-right"></div>
-        </div>
-
-        <div class="content-grid">
-          <div class="edu-col">
-            <div class="section-label">
-              <i class="fas fa-graduation-cap"></i>
-              <span>Academic Background</span>
-            </div>
-
-            <div class="edu-list">
-              <div class="edu-item">
-                <div class="edu-bullet"></div>
-                <span class="edu-year">2023</span>
-                <div class="edu-degree">B.S.S (Honors) in Economics</div>
-                <div class="edu-school">National University</div>
-                <div class="edu-detail">
-                  Focused on statistical analysis, macroeconomics, and quantitative methods.
-                  Graduated with CGPA 3.21/4.00.
-                </div>
-              </div>
-
-              <div class="edu-item">
-                <div class="edu-bullet"></div>
-                <span class="edu-year">2017</span>
-                <div class="edu-degree">Higher Secondary (HSC)</div>
-                <div class="edu-school">Jalalpur Jalalia College</div>
-                <div class="edu-detail">
-                  Humanities concentration. Built foundational skills in logic and social sciences.
-                  GPA 3.93/5.00.
-                </div>
-              </div>
-
-              <div class="edu-item">
-                <div class="edu-bullet"></div>
-                <span class="edu-year">2015</span>
-                <div class="edu-degree">Secondary School (SSC)</div>
-                <div class="edu-school">Atgram Amzadia Institute</div>
-                <div class="edu-detail">
-                  Early focus on academic discipline and humanities. GPA 3.75/5.00.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="skills-col">
-            <div class="section-label">
-              <i class="fas fa-layer-group"></i>
-              <span>Core Competencies</span>
-            </div>
-
-            <div class="skills-grid">
-              <div class="skill-card">
-                <div class="icon-box"><i class="fas fa-database"></i></div>
-                <div class="skill-title">Data & Automation</div>
-                <div class="skill-list">Advanced Excel, VBA, Apps Script, dashboards & pivot tables.</div>
-                <div class="dots">
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                </div>
-              </div>
-
-              <div class="skill-card">
-                <div class="icon-box"><i class="fas fa-clipboard-check"></i></div>
-                <div class="skill-title">Executive Operations</div>
-                <div class="skill-list">C-suite support, travel, board packs, and confidential communication.</div>
-                <div class="dots">
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                </div>
-              </div>
-
-              <div class="skill-card">
-                <div class="icon-box"><i class="fas fa-laptop-code"></i></div>
-                <div class="skill-title">Digital Workspace</div>
-                <div class="skill-list">Office 365, Google Workspace, Zoom, Teams, Notion.</div>
-                <div class="dots">
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic half"></span>
-                </div>
-              </div>
-
-              <div class="skill-card">
-                <div class="icon-box"><i class="fas fa-pen-fancy"></i></div>
-                <div class="skill-title">Content & Design</div>
-                <div class="skill-list">Photoshop, Illustrator, Canva, LaTeX / Overleaf documentation.</div>
-                <div class="dots">
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic active"></span>
-                  <span class="dot-basic"></span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <section id="process" class="section-shell">
-      <div class="process-wrapper reveal">
-        <header class="process-header">
-          <div class="process-title-group">
-            <h2>How I Work</h2>
-            <div class="sub">
-              My approach bridges the gap between administrative chaos and operational clarity.
-              I don't just complete tasks; I build systems.
-            </div>
-          </div>
-          <div class="process-count"></div>
-        </header>
-
-        <section class="steps-grid">
-          <article class="step-card">
-            <div class="icon-box"><i class="fas fa-search"></i></div>
-            <span class="step-number">Step 01</span>
-            <h3 class="step-title">Audit & Analyze</h3>
-            <p class="step-text">
-              I start by auditing current workflows to find bottlenecks. I identify exactly where
-              time is lost and where processes break down.
-            </p>
-          </article>
-
-          <article class="step-card">
-            <div class="icon-box"><i class="fas fa-chess-knight"></i></div>
-            <span class="step-number">Step 02</span>
-            <h3 class="step-title">Strategy & Plan</h3>
-            <p class="step-text">
-              I design a tailored solution—whether it's a new C-Suite filing protocol, a travel
-              logistics system, or a data tracking method.
-            </p>
-          </article>
-
-          <article class="step-card">
-            <div class="icon-box"><i class="fas fa-cogs"></i></div>
-            <span class="step-number">Step 03</span>
-            <h3 class="step-title">Build & Automate</h3>
-            <p class="step-text">
-              I implement the solution using tools like Excel, Apps Script, and automation platforms
-              to eliminate manual work and ensure accuracy.
-            </p>
-          </article>
-
-          <article class="step-card">
-            <div class="icon-box"><i class="fas fa-rocket"></i></div>
-            <span class="step-number">Step 04</span>
-            <h3 class="step-title">Execute & Train</h3>
-            <p class="step-text">
-              I deploy the system and train your team (leveraging my teaching background) to ensure
-              seamless adoption and long-term success.
-            </p>
-          </article>
-        </section>
-      </div>
-    </section>
-
-    <section id="services" class="section-shell anchor-section">
-      <div class="what-wrapper reveal">
-        <section class="what-left">
-          <h2 class="what-title">What I do.</h2>
-          <p>
-            I help leadership teams move from messy, manual work to clear, reliable
-            systems. My focus is on <strong>executive operations, workflow design,
-            and automation</strong> that actually fits how your team works.
-          </p>
-          <p>
-            From C-suite calendars and board packs to data trackers and approvals,
-            I build simple tools that remove repetition, protect important
-            information, and keep everyone aligned.
-          </p>
-          <p>
-            Whether you need a smarter spreadsheet, a more organised digital
-            workspace, or a full process redesign, I bring together
-            <strong>admin experience, teaching skills, and automation</strong>
-            to make work feel lighter.
-          </p>
-
-          <div class="cta-row">
-            <a href="#contact" class="btn-primary-block">
-              <span>Say Hello</span>
-              <i class="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </section>
-
-        <section class="what-right">
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-briefcase"></i>
-            </div>
-            <div>
-              <h3 class="service-title">Executive Operations & Support</h3>
-              <p class="service-text">
-                Calendar and meeting management, travel logistics, board materials,
-                and confidential communication — all organised into clean,
-                repeatable systems that protect leadership time.
-              </p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-gears"></i>
-            </div>
-            <div>
-              <h3 class="service-title">Workflow & Data Automation</h3>
-              <p class="service-text">
-                I design and build automations using Excel, Google Sheets, and Apps
-                Script to handle reporting, approvals, and status tracking —
-                reducing manual work and error-prone copy-paste.
-              </p>
-            </div>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <div>
-              <h3 class="service-title">Training, Documentation & Handover</h3>
-              <p class="service-text">
-                Clear guides, walkthroughs, and team training so your new systems
-                are easy to adopt, simple to maintain, and still working long after
-                the initial setup.
-              </p>
-            </div>
-          </article>
-        </section>
-      </div>
-    </section>
-
-    <section class="section-shell reveal" aria-labelledby="trusted-partners-heading">
-      <div class="partners-shell">
-        <div class="header-section">
-          <h2 id="trusted-partners-heading">Trusted Partners</h2>
-          <p>
-            I’ve had the privilege of collaborating with forward-thinking companies
-            to streamline operations and drive digital growth.
-          </p>
-        </div>
-
-        <div class="marquee-container" aria-hidden="true">
-        <div class="marquee-content">
-
-            <div class="logo-item">
-  <img
-    src="..."
-    alt="Prominent Tec"
-    loading="lazy"
-    width="160"
-    height="50"
-  >
-</div>
-
-<div class="logo-item">
-  <img
-    src="..."
-    alt="Modern Accessories"
-    loading="lazy"
-    width="160"
-    height="50"
-  >
-</div>
-
-<div class="logo-item">
-  <img
-    src="..."
-    alt="Texicon BD"
-    loading="lazy"
-    width="160"
-    height="50"
-  >
-</div>
-
-<div class="logo-item">
-  <img
-    src="..."
-    alt="Greenosoft"
-    loading="lazy"
-    width="160"
-    height="50"
-  >
-</div>
-
-<div class="logo-item">
-  <img
-    src="..."
-    alt="Greenotex"
-    loading="lazy"
-    width="160"
-    height="50"
-  >
-</div>
-
-<div class="logo-item">
-  <img
-    src="..."
-    alt="Daricomma"
-    loading="lazy"
-    width="160"
-    height="50"
-  >
-</div>
-
-<!-- Duplicated / decorative ones – keep aria-hidden + empty alt -->
-<div class="logo-item" aria-hidden="true">
-  <img src="..." alt="" loading="lazy" width="160" height="50">
-</div>
-
-<div class="logo-item" aria-hidden="true">
-  <img src="..." alt="" loading="lazy" width="160" height="50">
-</div>
-
-<div class="logo-item" aria-hidden="true">
-  <img src="..." alt="" loading="lazy" width="160" height="50">
-</div>
-
-<div class="logo-item" aria-hidden="true">
-  <img src="..." alt="" loading="lazy" width="160" height="50">
-</div>
-
-<div class="logo-item" aria-hidden="true">
-  <img src="..." alt="" loading="lazy" width="160" height="50">
-</div>
-
-<div class="logo-item" aria-hidden="true">
-  <img src="..." alt="" loading="lazy" width="160" height="50">
-</div>
-
-
-          </div>
-        </div>
-
-        <ul
-  class="sr-only"
-  role="img"
-  aria-label="Trusted partners: Prominent Tec, Modern Accessories, Texicon BD, Greenosoft, Greenotex, and Daricomma."
->
-  <li>Prominent Tec</li>
-  <li>Modern Accessories</li>
-  <li>Texicon BD</li>
-  <li>Greenosoft</li>
-  <li>Greenotex</li>
-  <li>Daricomma</li>
-</ul>
-
-      </div>
-    </section>
-
-    <section id="contact" class="section-shell reveal anchor-section">
-      <div class="contact-wrapper">
-        <div class="contact-left">
-          <div class="contact-kicker">Let’s work together</div>
-          <h2 class="contact-title">Let’s discuss your next move.</h2>
-
-          <p class="contact-sub">
-            I support executives, teams, and organisations by bringing structure, clarity,
-            and efficiency to their operations. From workflow design and automation to
-            documentation and digital organisation, my goal is to help you work smarter—
-            not harder.
-          </p>
-
-          <p class="contact-note">
-            Whether you need assistance improving internal processes, building reliable
-            systems, or creating tools that reduce manual work, I’d be happy to connect.
-            Share a little about what you’re working on, and I’ll get back to you with
-            ideas and next steps.
-          </p>
-
-          <div class="contact-badge-row">
-            <span class="contact-badge">Executive Support</span>
-            <span class="contact-badge">Workflow Automation</span>
-            <span class="contact-badge">Digital Systems</span>
-          </div>
-        </div>
-
-        <div class="contact-right">
-          <div class="contact-grid">
-            <div class="info-card">
-              <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
-              <div>
-                <div class="info-label">Location</div>
-                <div class="info-value">Gulshan, Dhaka</div>
-              </div>
-            </div>
-
-            <div class="info-card">
-              <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
-              <div>
-                <div class="info-label">Email</div>
-                <a href="mailto:aburahatsabir178@gmail.com" class="info-value">
-                  aburahatsabir178@gmail.com
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-orange selection:text-white">
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 bg-brand-orange text-white rounded-full flex items-center justify-center font-heading font-bold text-xl shadow-lg group-hover:scale-110 transition-transform">
+                        A
+                    </div>
+                    <span class="font-heading font-bold text-lg tracking-tight hidden sm:block">Abu Rahat Sabir</span>
                 </a>
-              </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#home" class="text-sm font-medium hover:text-brand-orange transition-colors">Home</a>
+                    <a href="#about" class="text-sm font-medium hover:text-brand-orange transition-colors">About</a>
+                    <a href="#experience" class="text-sm font-medium hover:text-brand-orange transition-colors">Experience</a>
+                    <a href="#services" class="text-sm font-medium hover:text-brand-orange transition-colors">Services</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-brand-orange transition-colors">Contact</a>
+                    
+                    <a href="AbuRahatSabir-Resume.pdf" target="_blank" class="px-5 py-2.5 rounded-full border-2 border-brand-orange text-brand-dark font-semibold text-xs uppercase tracking-wider hover:bg-brand-orange hover:text-white transition-all transform hover:-translate-y-0.5 shadow-sm">
+                        Resume
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl text-dark-800 focus:outline-none" aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-
-            <div class="info-card">
-              <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
-              <div>
-                <div class="info-label">Phone</div>
-                <a href="tel:+8801317874581" class="info-value">+880 1317-874581</a>
-              </div>
-            </div>
-
-            <div class="info-card">
-              <div class="info-icon"><i class="fa-brands fa-whatsapp"></i></div>
-              <div>
-                <div class="info-label">WhatsApp</div>
-                <a href="https://wa.me/8801946734566" class="info-value" target="_blank" rel="noopener noreferrer">
-                  +880 1946-734566
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="social-row">
-            <div class="social-label">Or connect with me here:</div>
-
-            <div class="social-links">
-
-             <a href="https://github.com/aburahatsabir"
-               class="social-link"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="GitHub (opens in a new tab)">
-              <i class="fab fa-github"></i>
-            </a>
-            
-            <a href="https://x.com/AbuRahatsabir"
-               class="social-link"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Twitter X (opens in a new tab)">
-              <i class="fab fa-twitter"></i>
-            </a>
-            
-            <a href="https://www.instagram.com/aburahat.sabir/"
-               class="social-link"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Instagram (opens in a new tab)">
-              <i class="fab fa-instagram"></i>
-            </a>
-            
-            <a href="https://facebook.com/aburahatsabir.178"
-               class="social-link"
-               target="_blank"
-               rel="noopener noreferrer"
-               aria-label="Facebook (opens in a new tab)">
-              <i class="fab fa-facebook"></i>
-            </a>
-
-
-            </div>
-          </div>
-
         </div>
-      </div>
-    </section>
-  </main>
 
-  <footer class="ars-footer">
-    <div class="ars-footer-grid">
-      <div class="ars-footer-logo-block">
-        <picture>
-          <source srcset="images/footer-logo.webp" type="image/webp">
-          <img src="images/footer-logo.webp"
-     class="ars-footer-logo"
-     width="180"
-     height="48"
-     loading="lazy"
-     style="height:auto;">
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-2 pb-6 space-y-1">
+                <a href="#home" class="block px-3 py-3 text-base font-medium hover:bg-brand-light hover:text-brand-orange rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-3 text-base font-medium hover:bg-brand-light hover:text-brand-orange rounded-md">About</a>
+                <a href="#experience" class="block px-3 py-3 text-base font-medium hover:bg-brand-light hover:text-brand-orange rounded-md">Experience</a>
+                <a href="#services" class="block px-3 py-3 text-base font-medium hover:bg-brand-light hover:text-brand-orange rounded-md">Services</a>
+                <a href="#contact" class="block px-3 py-3 text-base font-medium hover:bg-brand-light hover:text-brand-orange rounded-md">Contact</a>
+                <div class="pt-4">
+                    <a href="#" class="block w-full text-center px-5 py-3 rounded-lg bg-brand-orange text-white font-bold">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        </picture>
-      </div>
+    <main class="pt-20">
 
-      <div>
-        <div class="ars-footer-title">Navigation</div>
-        <ul class="ars-footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#experience">Portfolio</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-      </div>
+        <!-- Hero Section -->
+        <section id="home" class="relative min-h-[90vh] flex items-center pt-10 pb-20 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    
+                    <!-- Hero Content -->
+                    <div class="order-2 lg:order-1 reveal-section">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-light text-brand-orange text-xs font-bold uppercase tracking-widest mb-6">
+                            <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                            Available for New Projects
+                        </div>
+                        
+                        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-heading font-black text-dark-900 leading-[1.1] mb-6">
+                            Hi, I'm Rahat
+                            <span class="inline-block animate-wave origin-[70%_70%]">👋</span>
+                        </h1>
+                        
+                        <p class="text-2xl sm:text-3xl font-heading font-bold text-transparent bg-clip-text bg-gradient-to-r from-dark-900 to-gray-500 mb-6">
+                            Strategic Architect.
+                        </p>
+                        
+                        <p class="text-lg text-gray-600 leading-relaxed max-w-lg mb-10">
+                            I engineer time. By merging <span class="text-dark-900 font-semibold">executive operations</span> with <span class="text-dark-900 font-semibold">automation</span>, I remove repetitive work and help leaders focus on what truly matters.
+                        </p>
+                        
+                        <div class="flex flex-wrap gap-4 mb-12">
+                            <a href="#contact" class="px-8 py-4 bg-brand-orange text-white rounded-full font-semibold shadow-lg shadow-orange-500/30 hover:bg-brand-dark hover:shadow-orange-500/50 transition-all transform hover:-translate-y-1 flex items-center gap-2">
+                                Let's Talk <i class="fas fa-arrow-right text-sm"></i>
+                            </a>
+                            <a href="#experience" class="px-8 py-4 bg-white text-dark-900 border border-gray-200 rounded-full font-semibold hover:bg-gray-50 transition-all">
+                                View Work
+                            </a>
+                        </div>
 
-      <div>
-        <div class="ars-footer-title">Categories</div>
-        <ul class="ars-footer-links">
-          <li><a href="#experience">Executive Operations</a></li>
-          <li><a href="#education">Data & Automation</a></li>
-          <li><a href="#process">Digital Workspace</a></li>
-          <li><a href="#services">Content & Design</a></li>
-        </ul>
-      </div>
+                        <!-- Socials -->
+                        <div class="flex items-center gap-6 pt-8 border-t border-gray-200">
+                            <a href="https://linkedin.com/in/aburahatsabir78" target="_blank" class="text-gray-400 hover:text-[#0077b5] text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/aburahatsabir" target="_blank" class="text-gray-400 hover:text-black text-2xl transition-colors"><i class="fab fa-github"></i></a>
+                            <a href="https://x.com/AbuRahatsabir" target="_blank" class="text-gray-400 hover:text-black text-2xl transition-colors"><i class="fab fa-twitter"></i></a>
+                            <a href="mailto:aburahatsabir178@gmail.com" class="text-gray-400 hover:text-brand-orange text-2xl transition-colors"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
 
-      <div>
-        <div class="ars-footer-title">Elsewhere</div>
-        <ul class="ars-footer-links">
-          <li><a href="#experience">Case Studies</a></li>
-        </ul>
-      </div>
-    </div>
+                    <!-- Hero Image -->
+                    <div class="order-1 lg:order-2 flex justify-center lg:justify-end reveal-section delay-200">
+                        <div class="relative w-full max-w-md aspect-[4/5]">
+                            <!-- Decorative Elements -->
+                            <div class="absolute -top-4 -right-4 w-full h-full border-2 border-brand-orange/30 rounded-[2rem]"></div>
+                            <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-brand-light rounded-full -z-10"></div>
+                            
+                            <!-- Main Image -->
+                            <!-- User: Replace src below with 'images/hero.webp' -->
+                            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1000&auto=format&fit=crop" 
+                                 alt="Abu Rahat Sabir" 
+                                 class="w-full h-full object-cover rounded-[2rem] shadow-2xl z-10 relative bg-gray-200">
+                                 
+                            <!-- Floating Card -->
+                            <div class="absolute bottom-8 -left-8 bg-white p-4 rounded-xl shadow-xl z-20 flex items-center gap-4 animate-bounce" style="animation-duration: 3s;">
+                                <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-xl">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-gray-500 uppercase font-bold">Systems</p>
+                                    <p class="text-sm font-bold text-dark-900">Optimized</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-    <div class="ars-footer-bottom">
-      © 2025 Abu Rahat Sabir. All rights reserved.
-    </div>
-  </footer>
+                </div>
+            </div>
+        </section>
 
-  <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // 1. Scroll Animation
-    const revealElements = document.querySelectorAll('.reveal');
+        <!-- Stats Section -->
+        <section class="py-12 bg-white border-y border-gray-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal-section">
+                    <div class="p-4">
+                        <div class="text-4xl md:text-5xl font-heading font-black text-brand-orange mb-2 stat-number" data-target="6" data-suffix="+">0</div>
+                        <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-gray-500">Years Experience</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-4xl md:text-5xl font-heading font-black text-brand-orange mb-2 stat-number" data-target="650" data-suffix="+">0</div>
+                        <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-gray-500">Mentored</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-4xl md:text-5xl font-heading font-black text-brand-orange mb-2 stat-number" data-target="40" data-suffix="+">0</div>
+                        <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-gray-500">Automations</div>
+                    </div>
+                    <div class="p-4">
+                        <div class="text-4xl md:text-5xl font-heading font-black text-brand-orange mb-2 stat-number" data-target="165" data-suffix="+">0</div>
+                        <div class="text-xs md:text-sm font-bold uppercase tracking-widest text-gray-500">Clients Happy</div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    if ('IntersectionObserver' in window) {
-      const revealOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-      };
+        <!-- About Section (Bento Grid) -->
+        <section id="about" class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    
+                    <!-- Left Title -->
+                    <div class="lg:col-span-4 reveal-section">
+                        <h2 class="text-brand-orange font-bold uppercase tracking-widest text-sm mb-4">About Me</h2>
+                        <h3 class="text-3xl md:text-4xl font-heading font-bold text-dark-900 mb-6 leading-tight">
+                            Part strategy, part coordination, and part digital problem-solving.
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-6">
+                            I currently serve as an <strong>Executive Admin at Prominent Tec in Dhaka</strong>. I support executive-level operations—managing schedules, preparing reports, and organizing financial files.
+                        </p>
+                        <div class="bg-brand-light border-l-4 border-brand-orange p-6 rounded-r-xl">
+                            <p class="italic text-dark-800 font-medium">"If there’s a more efficient way to do something, I’ll find it—and if not, I’ll build one."</p>
+                        </div>
+                    </div>
 
-      const revealOnScroll = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        });
-      }, revealOptions);
+                    <!-- Right Images/Grid -->
+                    <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6 reveal-section delay-100">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl mb-6">
+                                <i class="fas fa-chalkboard-user"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-dark-900 mb-3">Teaching Roots</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">
+                                Before corporate admin, I taught ICT and mentored over 650 students. I still use these skills to train teams on new digital tools.
+                            </p>
+                        </div>
 
-      revealElements.forEach(el => revealOnScroll.observe(el));
-    } else {
-      revealElements.forEach(el => el.classList.add('active'));
-    }
+                        <!-- Card 2 -->
+                        <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center text-xl mb-6">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-dark-900 mb-3">Automation Passion</h4>
+                            <p class="text-sm text-gray-500 leading-relaxed">
+                                I love taking a slow, manual process and rebuilding it into something fast and accurate using Excel VBA and Apps Script.
+                            </p>
+                        </div>
 
-    // 2. Stats Counter Animation (Fixed Syntax)
-    const stats = document.querySelectorAll('.stat-number');
-    const statsSection = document.querySelector('.stats-section');
-    let hasAnimatedStats = false;
+                        <!-- Card 3 (Wide) -->
+                        <div class="md:col-span-2 bg-dark-900 text-white p-8 rounded-2xl relative overflow-hidden group">
+                            <div class="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                                <i class="fas fa-globe text-9xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3">Founder of E-LearnEx</h4>
+                            <p class="text-gray-400 max-w-lg mb-6">
+                                I run a community that has helped tens of thousands of learners gain access to global education resources like Coursera and Udemy.
+                            </p>
+                            <a href="#" class="text-brand-orange font-bold text-sm uppercase tracking-wide hover:text-white transition-colors">Learn More <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    function animateStats() {
-      if (hasAnimatedStats) return;
-      hasAnimatedStats = true;
+        <!-- Experience Timeline -->
+        <section id="experience" class="py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal-section">
+                    <h2 class="text-brand-orange font-bold uppercase tracking-widest text-sm mb-2">Career Path</h2>
+                    <h3 class="text-3xl md:text-4xl font-heading font-black text-dark-900">Experience.</h3>
+                </div>
 
-      stats.forEach(counter => {
-        const target = Number(counter.getAttribute('data-target')) || 0;
-        const suffix = counter.getAttribute('data-suffix') || ''; // important
-        const duration = 2000; 
-        const startTime = performance.now();
+                <div class="relative border-l-2 border-slate-200 ml-4 md:ml-0 space-y-12">
+                    
+                    <!-- Item 1 -->
+                    <div class="relative pl-8 md:pl-0 md:grid md:grid-cols-5 md:gap-10 items-start reveal-section">
+                        <!-- Date (Desktop Left) -->
+                        <div class="md:col-span-2 md:text-right md:pr-10">
+                            <h4 class="text-2xl font-bold text-dark-900">2025–Present</h4>
+                            <span class="inline-block px-3 py-1 mt-2 rounded bg-brand-light text-brand-orange text-xs font-bold uppercase">Executive Admin</span>
+                        </div>
+                        <!-- Dot -->
+                        <div class="absolute left-[-9px] top-1 md:left-1/2 md:ml-[-9px] w-5 h-5 rounded-full border-4 border-white bg-brand-orange shadow-md"></div>
+                        <!-- Content (Desktop Right) -->
+                        <div class="md:col-span-2 mt-2 md:mt-0">
+                            <h3 class="text-xl font-bold text-dark-900">Prominent Tec</h3>
+                            <p class="text-sm text-gray-500 mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Gulshan, Dhaka</p>
+                            <ul class="space-y-2 text-gray-600 text-sm leading-relaxed list-disc list-outside ml-4">
+                                <li>Manage complex C-suite schedules & multi-national travel.</li>
+                                <li>Prepare strategic board reports & presentations.</li>
+                                <li>Oversee HR/Finance operations, introducing automation to reduce manual work.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-        const updateCount = (now) => {
-          const elapsed = now - startTime;
-          const progress = Math.min(elapsed / duration, 1);
+                    <!-- Item 2 -->
+                    <div class="relative pl-8 md:pl-0 md:grid md:grid-cols-5 md:gap-10 items-start reveal-section">
+                        <div class="md:col-span-2 md:text-right md:pr-10">
+                            <h4 class="text-2xl font-bold text-gray-400">2022–2024</h4>
+                            <span class="inline-block px-3 py-1 mt-2 rounded bg-gray-100 text-gray-600 text-xs font-bold uppercase">Chief Instructor</span>
+                        </div>
+                        <div class="absolute left-[-9px] top-1 md:left-1/2 md:ml-[-9px] w-5 h-5 rounded-full border-4 border-white bg-gray-300 shadow-md"></div>
+                        <div class="md:col-span-2 mt-2 md:mt-0">
+                            <h3 class="text-xl font-bold text-dark-900">Dreams IT Park</h3>
+                            <p class="text-sm text-gray-500 mb-4"><i class="fas fa-map-marker-alt mr-1"></i> Sylhet</p>
+                            <ul class="space-y-2 text-gray-600 text-sm leading-relaxed list-disc list-outside ml-4">
+                                <li>Directed curriculum cycles for technical programs.</li>
+                                <li>Mentored 650+ learners with strong placement outcomes.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-          // Ease-out animation
-          const easeOutQuad = 1 - (1 - progress) * (1 - progress);
-          const currentValue = Math.ceil(easeOutQuad * target);
+                    <!-- Item 3 -->
+                    <div class="relative pl-8 md:pl-0 md:grid md:grid-cols-5 md:gap-10 items-start reveal-section">
+                        <div class="md:col-span-2 md:text-right md:pr-10">
+                            <h4 class="text-2xl font-bold text-gray-400">2020–Present</h4>
+                            <span class="inline-block px-3 py-1 mt-2 rounded bg-gray-100 text-gray-600 text-xs font-bold uppercase">Founder</span>
+                        </div>
+                        <div class="absolute left-[-9px] top-1 md:left-1/2 md:ml-[-9px] w-5 h-5 rounded-full border-4 border-white bg-gray-300 shadow-md"></div>
+                        <div class="md:col-span-2 mt-2 md:mt-0">
+                            <h3 class="text-xl font-bold text-dark-900">E-LearnEx</h3>
+                            <p class="text-sm text-gray-500 mb-4"><i class="fas fa-wifi mr-1"></i> Remote Community</p>
+                            <ul class="space-y-2 text-gray-600 text-sm leading-relaxed list-disc list-outside ml-4">
+                                <li>Founded digital learning community (30,000+ members).</li>
+                                <li>Enabled access to global learning resources like Coursera & Udemy.</li>
+                            </ul>
+                        </div>
+                    </div>
 
-          counter.innerText = currentValue + suffix;
+                </div>
+            </div>
+        </section>
 
-          if (progress < 1) {
-            requestAnimationFrame(updateCount);
-          } else {
-            counter.innerText = target + suffix;
-          }
-        };
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-dark-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-section">
+                    <div class="max-w-2xl">
+                        <h2 class="text-brand-orange font-bold uppercase tracking-widest text-sm mb-2">What I Do</h2>
+                        <h3 class="text-3xl md:text-4xl font-heading font-black mb-4">Systems that save time.</h3>
+                        <p class="text-gray-400 leading-relaxed text-lg">
+                            I help leadership teams move from messy, manual work to clear, reliable systems.
+                        </p>
+                    </div>
+                    <a href="#contact" class="px-6 py-3 border border-gray-700 rounded-full hover:bg-white hover:text-dark-900 transition-colors font-medium text-sm">
+                        Get a Proposal
+                    </a>
+                </div>
 
-        requestAnimationFrame(updateCount);
-      });
-    }
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="p-8 rounded-2xl bg-dark-800 hover:bg-dark-700 transition-colors border border-dark-700 group reveal-section delay-100">
+                        <div class="w-14 h-14 bg-brand-orange/10 text-brand-orange rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Executive Operations</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Calendar & meeting management, travel logistics, and board materials—organized into clean, repeatable systems that protect leadership time.
+                        </p>
+                    </div>
 
-    if (statsSection && stats.length) {
-      if ('IntersectionObserver' in window) {
-        const statsObserver = new IntersectionObserver((entries, observer) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateStats();
-              observer.unobserve(statsSection);
+                    <!-- Service 2 -->
+                    <div class="p-8 rounded-2xl bg-dark-800 hover:bg-dark-700 transition-colors border border-dark-700 group reveal-section delay-200">
+                        <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-gears"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Workflow Automation</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            I design automations using Excel, Google Sheets, and Apps Script to handle reporting and approvals, reducing error-prone copy-paste work.
+                        </p>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="p-8 rounded-2xl bg-dark-800 hover:bg-dark-700 transition-colors border border-dark-700 group reveal-section delay-300">
+                        <div class="w-14 h-14 bg-green-500/10 text-green-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h4 class="text-xl font-bold mb-3">Training & Handover</h4>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            Clear guides and team training so your new systems are easy to adopt, simple to maintain, and continue working long after setup.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="process" class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16 reveal-section">
+                    <h2 class="text-brand-orange font-bold uppercase tracking-widest text-sm mb-2">My Process</h2>
+                    <h3 class="text-3xl md:text-4xl font-heading font-black text-dark-900">How It Works.</h3>
+                </div>
+
+                <div class="grid md:grid-cols-4 gap-6">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative reveal-section">
+                        <span class="absolute top-6 right-6 text-6xl font-black text-gray-50 opacity-50 z-0">01</span>
+                        <div class="relative z-10">
+                            <div class="w-10 h-10 bg-brand-light text-brand-orange rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Audit</h4>
+                            <p class="text-sm text-gray-500">I audit current workflows to find bottlenecks and where time is lost.</p>
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative reveal-section delay-100">
+                        <span class="absolute top-6 right-6 text-6xl font-black text-gray-50 opacity-50 z-0">02</span>
+                        <div class="relative z-10">
+                            <div class="w-10 h-10 bg-brand-light text-brand-orange rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-chess-knight"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Strategy</h4>
+                            <p class="text-sm text-gray-500">I design a tailored solution—whether it's a filing protocol or data tracker.</p>
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative reveal-section delay-200">
+                        <span class="absolute top-6 right-6 text-6xl font-black text-gray-50 opacity-50 z-0">03</span>
+                        <div class="relative z-10">
+                            <div class="w-10 h-10 bg-brand-light text-brand-orange rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Build</h4>
+                            <p class="text-sm text-gray-500">I implement the solution using tools like Excel and Apps Script to automate work.</p>
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 relative reveal-section delay-300">
+                        <span class="absolute top-6 right-6 text-6xl font-black text-gray-50 opacity-50 z-0">04</span>
+                        <div class="relative z-10">
+                            <div class="w-10 h-10 bg-brand-light text-brand-orange rounded-lg flex items-center justify-center mb-4">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Execute</h4>
+                            <p class="text-sm text-gray-500">I deploy the system and train your team to ensure seamless adoption.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partners Marquee -->
+        <section class="py-10 bg-white border-y border-gray-100 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 mb-8 text-center">
+                <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">Trusted By Companies</p>
+            </div>
+            
+            <div class="relative w-full overflow-hidden">
+                <div class="flex animate-scroll whitespace-nowrap gap-16 items-center">
+                    <!-- Logos (First Set) -->
+                    <!-- Note: Using text placeholders for logos as images are unavailable, styled to look like logos -->
+                    <span class="text-2xl font-black text-gray-300 uppercase">Prominent Tec</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Modern Accessories</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Texicon BD</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Greenosoft</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Greenotex</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Daricomma</span>
+                    
+                    <!-- Logos (Duplicate for loop) -->
+                    <span class="text-2xl font-black text-gray-300 uppercase">Prominent Tec</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Modern Accessories</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Texicon BD</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Greenosoft</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Greenotex</span>
+                    <span class="text-2xl font-black text-gray-300 uppercase">Daricomma</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-white">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-brand-orange rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+                    
+                    <!-- Left: Text -->
+                    <div class="p-10 md:p-14 md:w-1/2 text-white flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-3xl md:text-4xl font-heading font-black mb-6">Let's discuss your next move.</h3>
+                            <p class="text-orange-100 leading-relaxed mb-8">
+                                I support executives and teams by bringing structure and efficiency to their operations. Share a little about what you’re working on.
+                            </p>
+                            
+                            <div class="space-y-4">
+                                <a href="mailto:aburahatsabir178@gmail.com" class="flex items-center gap-4 text-white hover:text-dark-900 transition-colors">
+                                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <span class="font-medium">aburahatsabir178@gmail.com</span>
+                                </a>
+                                <a href="tel:+8801317874581" class="flex items-center gap-4 text-white hover:text-dark-900 transition-colors">
+                                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <span class="font-medium">+880 1317-874581</span>
+                                </a>
+                                <div class="flex items-center gap-4 text-white">
+                                    <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <span class="font-medium">Gulshan, Dhaka</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 mt-10">
+                            <a href="#" class="w-10 h-10 bg-white text-brand-orange rounded-full flex items-center justify-center hover:bg-dark-900 hover:text-white transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white text-brand-orange rounded-full flex items-center justify-center hover:bg-dark-900 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                            <a href="#" class="w-10 h-10 bg-white text-brand-orange rounded-full flex items-center justify-center hover:bg-dark-900 hover:text-white transition-colors"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Pseudo Form (Visual) -->
+                    <div class="bg-white p-10 md:p-14 md:w-1/2">
+                        <form action="mailto:aburahatsabir178@gmail.com" method="post" enctype="text/plain" class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-orange-100 outline-none transition-all" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Email</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-orange-100 outline-none transition-all" placeholder="john@example.com">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2">Message</label>
+                                <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-slate-50 border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-orange-100 outline-none transition-all" placeholder="Tell me about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-4 bg-dark-900 text-white font-bold rounded-lg hover:bg-brand-orange transition-colors shadow-lg">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-2 md:col-span-1">
+                    <a href="#home" class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-brand-orange text-white rounded-full flex items-center justify-center font-heading font-bold text-sm">A</div>
+                        <span class="font-heading font-bold text-dark-900">Abu Rahat Sabir</span>
+                    </a>
+                    <p class="text-sm text-gray-500">Engineering time for executives through smart automation.</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-dark-900 mb-4">Navigation</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#home" class="hover:text-brand-orange">Home</a></li>
+                        <li><a href="#about" class="hover:text-brand-orange">About</a></li>
+                        <li><a href="#experience" class="hover:text-brand-orange">Portfolio</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-dark-900 mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#services" class="hover:text-brand-orange">Executive Ops</a></li>
+                        <li><a href="#services" class="hover:text-brand-orange">Automation</a></li>
+                        <li><a href="#services" class="hover:text-brand-orange">Consulting</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-dark-900 mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm text-gray-500">
+                        <li><a href="#" class="hover:text-brand-orange">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-brand-orange">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-100 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
+                <p>&copy; 2025 Abu Rahat Sabir. All rights reserved.</p>
+                <p>Designed & Built with <i class="fas fa-heart text-red-400 mx-1"></i> in Dhaka.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 1. Mobile Menu Toggle
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const icon = btn.querySelector('i');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                if (menu.classList.contains('hidden')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+            });
+
+            // Close menu when clicking a link
+            menu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+
+            // 2. Reveal on Scroll Animation
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.reveal-section').forEach(el => observer.observe(el));
+
+            // 3. Stats Counter
+            const statsSection = document.querySelector('.stat-number').closest('section');
+            let hasAnimated = false;
+
+            const animateStats = () => {
+                const stats = document.querySelectorAll('.stat-number');
+                stats.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const suffix = counter.getAttribute('data-suffix');
+                    const duration = 2000;
+                    const increment = target / (duration / 16); 
+
+                    let current = 0;
+                    const updateCount = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current) + suffix;
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.innerText = target + suffix;
+                        }
+                    };
+                    updateCount();
+                });
+            };
+
+            if (statsSection) {
+                const statsObserver = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting && !hasAnimated) {
+                        animateStats();
+                        hasAnimated = true;
+                    }
+                });
+                statsObserver.observe(statsSection);
             }
-          });
-        }, { threshold: 0.2 });
-
-        statsObserver.observe(statsSection);
-      } else {
-        animateStats();
-      }
-    }
-  });
-</script>
-
-
+        });
+    </script>
 </body>
 </html>
-
