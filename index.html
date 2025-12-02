@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     rel="stylesheet">
 
   <link
@@ -40,14 +40,24 @@
     media="all"
     onload="this.media='all'">
 
+<head>
+  ...
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    rel="stylesheet"
+    media="all"
+    onload="this.media='all'">
+
+  <noscript>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  </noscript>
+
+  <style>
+    /* all your CSS here */
+  </style>
 </head>
 
-<noscript>
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-</noscript>
-
-<style>
   :root {
     /* Shared Theme Variables */
     --accent: #FF5722;
@@ -176,18 +186,19 @@
   }
 
   .logo-circle {
-    width: 50px;
-    height: 50px;
-    background-color: #FF4D00;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 700;
-    flex-shrink: 0;
-  }
+  width: 50px;
+  height: 50px;
+  background-color: #FF4D00;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 700;
+  flex-shrink: 0;
+  text-decoration: none; /* add this */
+}
 
   .top-nav {
     display: flex;
@@ -688,13 +699,15 @@
      ========================= */
 
   .edu-wrapper {
-    width: 100%;
-    max-width: 1100px;
-    background: #ffffff;
-    padding: 60px 20px 80px;
-    position: relative;
-    margin: 0 auto;
-  }
+  width: 100%;
+  max-width: 1100px;
+  background: #ffffff;
+  padding: 60px 20px 80px;
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden; /* Prevents decoration-ring from causing horizontal scroll */
+}
+
 
   .decoration-ring {
     position: absolute;
@@ -1212,9 +1225,11 @@
     animation: scroll 40s linear infinite;
   }
 
-  .marquee-content:hover {
-    animation-play-state: paused;
-  }
+  .marquee-content:hover,
+.marquee-content:focus-within {
+  animation-play-state: paused;
+}
+
 
   .logo-item {
     display: flex;
@@ -1732,7 +1747,7 @@
 
   <header>
     <div class="top-bar">
-      <div class="logo-circle" aria-label="Abu Rahat Sabir logo">A</div>
+      <a href="#home" class="logo-circle" aria-label="Back to top">A</a>
 
       <nav class="top-nav">
         <a href="#home">Home</a>
@@ -1746,7 +1761,7 @@
          class="btn-resume"
          target="_blank"
          rel="noopener noreferrer">
-         Download PDF Resume
+         Download Resume
       </a>
     </div>
   </header>
@@ -1770,8 +1785,11 @@
 
         <div class="subtitle">Strategic Architect.</div>
         <p class="description">
-          Bridging the gap between C-suite operations and digital innovation. I streamline workflows, automate data, and empower teams through technology.
-        </p>
+  I engineer time. By merging executive operations with automation, I remove 
+  repetitive work, reduce errors, and build systems that help leaders focus 
+  on what truly matters.
+</p>
+
 
         <div class="hero-cta-group">
           <a href="#contact" class="btn-primary-hero">Let's Talk <i class="fas fa-arrow-right"></i></a>
@@ -1865,11 +1883,13 @@
         <div class="about-left">
           <picture>
             <source srcset="images/about.webp" type="image/webp">
-            <img
-              src="images/about.webp"
-              alt="Rahat working with digital tools"
-              loading="lazy"
-            >
+            <img src="images/about.webp"
+     alt="Rahat working with digital tools"
+     width="400"
+     height="500"
+     loading="lazy"
+     style="height:auto;">
+
           </picture>
         </div>
 
@@ -2201,7 +2221,7 @@
     <section id="services" class="section-shell">
       <div class="what-wrapper reveal">
         <section class="what-left">
-          <h2>What I do.</h2>
+          <h2 class="section-title-large">What I do.</h2>
           <p>
             I help leadership teams move from messy, manual work to clear, reliable
             systems. My focus is on <strong>executive operations, workflow design,
@@ -2285,7 +2305,7 @@
 
         <!-- Decorative marquee: hidden from screen readers -->
         <div class="marquee-container" aria-hidden="true">
-          <div class="marquee-content">
+        <div class="marquee-content" tabindex="0">
 
             <!-- ORIGINAL LOGOS -->
             <div class="logo-item">
@@ -2423,33 +2443,38 @@
 
             <div class="social-links">
 
-              <a href="https://linkedin.com/in/aburahatsabir78"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
+             <a href="https://github.com/aburahatsabir"
+               class="social-link"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="GitHub (opens in a new tab)">
+              <i class="fab fa-github"></i>
+            </a>
+            
+            <a href="https://x.com/AbuRahatsabir"
+               class="social-link"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Twitter X (opens in a new tab)">
+              <i class="fab fa-twitter"></i>
+            </a>
+            
+            <a href="https://www.instagram.com/aburahat.sabir/"
+               class="social-link"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram (opens in a new tab)">
+              <i class="fab fa-instagram"></i>
+            </a>
+            
+            <a href="https://facebook.com/aburahatsabir.178"
+               class="social-link"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Facebook (opens in a new tab)">
+              <i class="fab fa-facebook"></i>
+            </a>
 
-              <a href="https://github.com/aburahatsabir"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 aria-label="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-
-              <a href="https://facebook.com/aburahatsabir.178"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-
-              <a href="https://x.com/AbuRahatsabir"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
 
             </div>
           </div>
@@ -2464,12 +2489,13 @@
       <div class="ars-footer-logo-block">
         <picture>
           <source srcset="images/footer-logo.webp" type="image/webp">
-          <img
-            src="images/footer-logo.webp"
-            alt="ARS personal logo"
-            class="ars-footer-logo"
-            loading="lazy"
-          >
+          <img src="images/footer-logo.webp"
+     class="ars-footer-logo"
+     width="180"
+     height="48"
+     loading="lazy"
+     style="height:auto;">
+
         </picture>
       </div>
 
@@ -2543,22 +2569,29 @@
           const target = Number(counter.getAttribute('data-target')) || 0;
           const speed = 200;
 
-          const updateCount = () => {
-            const current = Number(counter.innerText.replace('+', '')) || 0;
-            const increment = target / speed;
-            const suffix = counter.getAttribute('data-suffix') || '';
+          const duration = 2000; // how long the animation runs (2 seconds)
+const startTime = performance.now();
 
-            if (current < target) {
-              counter.innerText = Math.ceil(current + increment);
-              setTimeout(updateCount, 20);
-            } else {
-              counter.innerText = target + suffix;
-            }
-          };
+const updateCount = (now) => {
+  const elapsed = now - startTime;
+  const progress = Math.min(elapsed / duration, 1);
 
-          updateCount();
-        });
-      }
+  // Ease-out animation for smooth finish
+  const easeOutQuad = 1 - (1 - progress) * (1 - progress);
+
+  const currentValue = Math.ceil(easeOutQuad * target);
+
+  counter.innerText = currentValue + suffix;
+
+  if (progress < 1) {
+    requestAnimationFrame(updateCount);
+  } else {
+    counter.innerText = target + suffix; // finish clean
+  }
+};
+
+requestAnimationFrame(updateCount);
+
 
       if (statsSection && stats.length) {
         if ('IntersectionObserver' in window) {
@@ -2581,3 +2614,4 @@
 
 </body>
 </html>
+
