@@ -30,18 +30,13 @@
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ✅ Fixed Google Font link (no nested <link>, no stray rel) -->
   <link
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
     rel="stylesheet">
 
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    rel="stylesheet"
-    media="all"
-    onload="this.media='all'">
-
-<head>
-  ...
+  <!-- Font Awesome (single, clean include) -->
   <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     rel="stylesheet"
@@ -49,14 +44,16 @@
     onload="this.media='all'">
 
   <noscript>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </noscript>
 
   <style>
     /* all your CSS here */
   </style>
 </head>
+
 
   :root {
     /* Shared Theme Variables */
@@ -2533,85 +2530,86 @@
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Scroll Animation (Intersection Observer)
-      const revealElements = document.querySelectorAll('.reveal');
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Scroll Animation
+    const revealElements = document.querySelectorAll('.reveal');
 
-      if ('IntersectionObserver' in window) {
-        const revealOptions = {
-          threshold: 0.15,
-          rootMargin: '0px 0px -50px 0px'
+    if ('IntersectionObserver' in window) {
+      const revealOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        });
+      }, revealOptions);
+
+      revealElements.forEach(el => revealOnScroll.observe(el));
+    } else {
+      revealElements.forEach(el => el.classList.add('active'));
+    }
+
+    // 2. Stats Counter Animation (Fixed Syntax)
+    const stats = document.querySelectorAll('.stat-number');
+    const statsSection = document.querySelector('.stats-section');
+    let hasAnimatedStats = false;
+
+    function animateStats() {
+      if (hasAnimatedStats) return;
+      hasAnimatedStats = true;
+
+      stats.forEach(counter => {
+        const target = Number(counter.getAttribute('data-target')) || 0;
+        const suffix = counter.getAttribute('data-suffix') || ''; // important
+        const duration = 2000; 
+        const startTime = performance.now();
+
+        const updateCount = (now) => {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          // Ease-out animation
+          const easeOutQuad = 1 - (1 - progress) * (1 - progress);
+          const currentValue = Math.ceil(easeOutQuad * target);
+
+          counter.innerText = currentValue + suffix;
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            counter.innerText = target + suffix;
+          }
         };
 
-        const revealOnScroll = new IntersectionObserver((entries, observer) => {
+        requestAnimationFrame(updateCount);
+      });
+    }
+
+    if (statsSection && stats.length) {
+      if ('IntersectionObserver' in window) {
+        const statsObserver = new IntersectionObserver((entries, observer) => {
           entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
-            entry.target.classList.add('active');
-            observer.unobserve(entry.target);
+            if (entry.isIntersecting) {
+              animateStats();
+              observer.unobserve(statsSection);
+            }
           });
-        }, revealOptions);
+        }, { threshold: 0.2 });
 
-        revealElements.forEach(el => revealOnScroll.observe(el));
+        statsObserver.observe(statsSection);
       } else {
-        revealElements.forEach(el => el.classList.add('active'));
+        animateStats();
       }
+    }
+  });
+</script>
 
-      // 2. Stats Counter Animation
-      const stats = document.querySelectorAll('.stat-number');
-      const statsSection = document.querySelector('.stats-section');
-      let hasAnimatedStats = false;
-
-      function animateStats() {
-        if (hasAnimatedStats) return;
-        hasAnimatedStats = true;
-
-        stats.forEach(counter => {
-          const target = Number(counter.getAttribute('data-target')) || 0;
-          const speed = 200;
-
-          const duration = 2000; // how long the animation runs (2 seconds)
-const startTime = performance.now();
-
-const updateCount = (now) => {
-  const elapsed = now - startTime;
-  const progress = Math.min(elapsed / duration, 1);
-
-  // Ease-out animation for smooth finish
-  const easeOutQuad = 1 - (1 - progress) * (1 - progress);
-
-  const currentValue = Math.ceil(easeOutQuad * target);
-
-  counter.innerText = currentValue + suffix;
-
-  if (progress < 1) {
-    requestAnimationFrame(updateCount);
-  } else {
-    counter.innerText = target + suffix; // finish clean
-  }
-};
-
-requestAnimationFrame(updateCount);
-
-
-      if (statsSection && stats.length) {
-        if ('IntersectionObserver' in window) {
-          const statsObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                animateStats();
-                observer.unobserve(statsSection);
-              }
-            });
-          }, { threshold: 0.2 });
-
-          statsObserver.observe(statsSection);
-        } else {
-          animateStats();
-        }
-      }
-    });
-  </script>
 
 </body>
 </html>
+
 
