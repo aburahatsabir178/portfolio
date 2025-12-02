@@ -4,21 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Abu Rahat Sabir | Executive Admin & Automation Specialist</title>
+  <title>Abu Rahat Sabir | Executive Admin & Workflow Automation Specialist</title>
 
   <meta name="description"
-        content="Abu Rahat Sabir – Executive Admin and operations strategist in Dhaka, specialising in workflow design, automation, digital systems, and high-level business coordination.">
+      content="Executive Admin in Dhaka specialising in C-suite support, workflow design, and data automation. I help leaders save time by turning manual processes into reliable systems.">
 
-  <meta property="og:title" content="Abu Rahat Sabir | Executive Admin & Automation Specialist">
-  <meta property="og:description" content="Streamlining workflows and automating data for C-suite operations.">
+  <meta property="og:title" content="Abu Rahat Sabir | Executive Admin & Workflow Automation Specialist">
+  <meta property="og:description"
+      content="Executive Admin specialising in workflow design and data automation. I help leaders reduce manual work and build reliable systems.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://aburahatsabir178.github.io/portfolio/">
-  <meta property="og:image" content="https://aburahatsabir178.github.io/portfolio/preview.webp">
+  <meta property="og:url" content="https://aburahatsabir.github.io/portfolio/">
+  <meta property="og:image" content="https://aburahatsabir.github.io/portfolio/preview.webp">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Abu Rahat Sabir | Executive Admin & Automation Specialist">
-  <meta name="twitter:description" content="Streamlining workflows and automating data for C-suite operations.">
-  <meta name="twitter:image" content="https://aburahatsabir178.github.io/portfolio/preview.webp">
+  <meta name="twitter:title" content="Abu Rahat Sabir | Executive Admin & Workflow Automation Specialist">
+  <meta name="twitter:description"
+  content="Executive Admin specialising in C-suite support, workflow design, and automation. I help leaders save time by building reliable systems.">
+  <meta name="twitter:image" content="https://aburahatsabir.github.io/portfolio/preview.webp">
 
   <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -26,57 +28,78 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-    rel="stylesheet">
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap"
+  rel="stylesheet">
 
   <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    rel="stylesheet"
-    media="all"
-    onload="this.media='all'">
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  media="print"
+  onload="this.media='all'">
 
-  <noscript>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  </noscript>
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</noscript>
+
 
   <style>
-    :root {
-      /* Shared Theme Variables */
-      --accent: #FF5722;
-      --accent-hover: #E64A19;
-      --bg-soft: #f6f7fb;
-      --text-main: #151515;
-      --text-muted: #6b6b6b;
-      --border: #eaeaea;
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+    
+   :root {
+  /* Shared Theme Variables */
+  --accent: #FF5722;
+  --accent-strong: #FF4D00;
+  --accent-soft: rgba(255, 87, 34, 0.08);
+  --accent-soft-solid: #FFF3EB;
+  --accent-hover: #E64A19;
 
-      /* Header + Layout Rhythm */
-      --header-height: 100px;
-      --section-gap-lg: 80px;  /* default big gap between sections */
-      --section-gap-md: 60px;
-      --section-gap-sm: 40px;
-    }
+  --bg-body: #ffffff;
+  --bg-soft: #f6f7fb;
 
-    * {
-      box-sizing: border-box;
-    }
+  --text-main: #111111;   /* default body text */
+  --text-strong: #222222; /* headings / key labels */
+  --text-muted: #6b6b6b;
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: var(--header-height);
-    }
+  --border: #eaeaea;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+
+  /* Header + Layout Rhythm */
+  --header-height: 100px;
+  --section-gap-lg: 80px;
+  --section-gap-md: 60px;
+  --section-gap-sm: 40px;
+}
+
+
+html {
+  font-size: 16px; /* sets 1rem = 16px explicitly */
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+
+/* Utility: consistent offset for in-page anchors */
+.anchor-section {
+  scroll-margin-top: calc(var(--header-height) + 8px);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --header-height: 80px;
+  }
+}
 
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 24px 16px var(--section-gap-lg);
-      background-color: #ffffff;
-      color: #111;
-      overflow-x: hidden;
-    }
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 1.5rem 1rem var(--section-gap-lg); /* if you already applied the rem change */
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
 
     /* =========================
        LAYOUT & SPACING SYSTEM
@@ -169,11 +192,11 @@
       flex-wrap: wrap;
     }
 
-    .logo-circle {
+      .logo-circle {
       width: 50px;
       height: 50px;
-      background-color: #FF4D00;
-      color: white;
+      background-color: var(--accent-strong);
+      color: #fff;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -193,12 +216,13 @@
     }
 
     .top-nav a {
-      text-decoration: none;
-      color: #333;
-      padding: 6px 10px;
-      border-radius: 999px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
+  text-decoration: none;
+  color: #333;
+  padding: 8px 12px;   /* slightly larger hit area */
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
 
     .top-nav a:hover {
       background: rgba(255, 87, 34, 0.08);
@@ -265,14 +289,15 @@
       box-shadow: 25px 25px 0px rgba(255, 87, 34, 0.2);
     }
 
-    .hero-section h1 {
-      font-size: 56px;
-      font-weight: 900;
-      margin: 0 0 10px 0;
-      letter-spacing: -2px;
-      line-height: 1.1;
-      color: var(--text-main);
-    }
+   .hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 0 0 10px 0;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  color: var(--text-strong); /* was #111 / var(--text-main) */
+}
+
 
     .hand-icon {
       width: 48px;
@@ -294,7 +319,7 @@
     }
 
     .hero-section .subtitle {
-      font-size: 48px;
+      font-size: 3rem; /* 48px / 16 ≈ 3.0rem */
       font-weight: 800;
       line-height: 1.1;
       margin: 0 0 24px 0;
@@ -371,22 +396,32 @@
     }
 
     .social-strip {
-      display: flex;
-      gap: 20px;
-      border-top: 1px solid var(--border);
-      padding-top: 25px;
-    }
+  display: flex;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+  padding-top: 25px;
+}
 
-    .social-link {
-      color: var(--text-muted);
-      font-size: 20px;
-      transition: var(--transition);
-    }
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: var(--text-muted);
+  font-size: 20px;
+  transition: var(--transition);
+  border-radius: 999px;
+}
 
-    .social-link:hover {
-      color: var(--accent);
-      transform: translateY(-3px);
-    }
+/* Match hover and keyboard focus */
+.social-link:hover,
+.social-link:focus-visible {
+  color: var(--accent);
+  transform: translateY(-3px);
+  outline: none;
+}
+
 
     /* =========================
        ABOUT
@@ -430,13 +465,15 @@
       border-radius: 10px;
     }
 
-    .about-right h1 {
-      font-size: 48px;
-      font-weight: 900;
-      margin: 0;
-      color: #333;
-      letter-spacing: -1px;
-    }
+    .header-left h2 {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--text-strong); /* was #1a1a1a */
+}
+
 
     .about-right h2 {
       font-size: 18px;
@@ -633,11 +670,11 @@
     }
 
     .company-name {
-      font-size: 22px;
-      font-weight: 800;
-      color: #111;
-      margin: 0 0 4px 0;
-    }
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-strong);
+  margin: 0 0 4px 0;
+}
 
     .location-row {
       display:flex;
@@ -648,14 +685,15 @@
     }
 
     .location {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 600;
-      color: #FF5722;
-      background: rgba(255, 87, 34, 0.08);
-      padding: 4px 10px;
-      border-radius: 999px;
-    }
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--accent);
+        background: var(--accent-soft);
+        padding: 4px 10px;
+        border-radius: 999px;
+      }
+
 
     .meta-tag {
       font-size: 12px;
@@ -865,8 +903,8 @@
       width: 60px;
       height: 60px;
       border-radius: 18px;
-      background: #fff0eb;
-      color: #FF5722;
+      background: var(--accent-soft-solid);
+      color: var(--accent);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -982,7 +1020,7 @@
       width: 56px;
       height: 56px;
       border-radius: 16px;
-      background: rgba(255, 87, 34, 0.1);
+      background: var(--accent-soft);
       font-size: 24px;
       margin-bottom: 24px;
     }
@@ -1037,11 +1075,11 @@
       margin: 0 auto;
     }
 
-    .what-left h2{
-      font-size:40px;
-      font-weight:900;
-      margin:0 0 16px;
-      letter-spacing:-1px;
+    .what-title {
+      font-size: 40px;
+      font-weight: 900;
+      margin: 0 0 16px;
+      letter-spacing: -1px;
     }
 
     .what-left p{
@@ -1113,18 +1151,19 @@
       box-shadow:0 18px 38px rgba(255,87,34,0.15);
     }
 
-    .service-icon{
-      width:42px;
-      height:42px;
-      border-radius:14px;
-      background:rgba(255,87,34,0.08);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:var(--accent);
-      font-size:18px;
-      margin-top:4px;
-    }
+          .service-icon{
+        width:42px;
+        height:42px;
+        border-radius:14px;
+        background:var(--accent-soft);
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        color:var(--accent);
+        font-size:18px;
+        margin-top:4px;
+      }
+
 
     .service-title{
       font-size:18px;
@@ -1222,15 +1261,15 @@
     }
 
     .logo-item img {
-      height: 50px;
-      width: auto;
-      max-width: 160px;
-      object-fit: contain;
-      filter: grayscale(100%);
-      opacity: 0.5;
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      cursor: pointer;
-    }
+  width: 160px;      /* fixed width */
+  height: 50px;      /* fixed height */
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.5;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: pointer;
+}
+
 
     .logo-item img:hover {
       filter: grayscale(0%);
@@ -1290,9 +1329,10 @@
 
     .contact-left {
       padding: 42px 44px 46px;
-      background: #FFF3EB;
+      background: var(--accent-soft-solid);
       position: relative;
     }
+
 
     .contact-left::after {
       content: "";
@@ -1433,24 +1473,28 @@
       gap: 14px;
     }
 
-    .social-links a {
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #151515;
-      transition: 0.2s ease;
-    }
+   .social-links a {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #151515;
+  transition: 0.2s ease;
+}
 
-    .social-links a:hover {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
+/* Hover + keyboard focus get the same strong feedback */
+.social-links a:hover,
+.social-links a:focus-visible {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  transform: translateY(-2px);
+  outline: none; /* we replace the default outline with this strong state */
+}
+
 
     /* =========================
        FOOTER
@@ -1532,6 +1576,26 @@
       border: 0;
       white-space: nowrap;
     }
+
+    .skip-link {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 8px 12px;
+  background: #000;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  transform: translateY(-150%);
+  transition: transform 0.2s ease;
+  z-index: 1000;
+}
+
+/* Only becomes visible when focused with keyboard */
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
 
     /* =========================
        RESPONSIVE
@@ -1728,6 +1792,8 @@
 
 <body>
 
+  <a href="#home" class="skip-link">Skip to main content</a>
+
   <header>
     <div class="top-bar">
       <a href="#home" class="logo-circle" aria-label="Back to top">A</a>
@@ -1751,18 +1817,19 @@
 
   <main>
 
-    <section class="section-shell hero-section" id="home">
+    <section class="section-shell hero-section anchor-section" id="home">
       <div class="hero-left reveal">
         <span class="section-tag">Welcome to my portfolio</span>
         <h1>Hi, I'm Rahat
           <picture>
             <source srcset="images/hand.webp" type="image/webp">
             <img
-              src="images/hand.webp"
-              alt=""
-              class="hand-icon"
-              aria-hidden="true"
-            >
+                  src="images/hand.webp"
+                  alt=""
+                  class="hand-icon"
+                  aria-hidden="true"
+                  width="48"
+                  height="48">
           </picture>
         </h1>
 
@@ -1861,7 +1928,7 @@
       </div>
     </section>
 
-    <section id="about" class="section-shell mb-lg">
+    <section id="about" class="section-shell mb-lg anchor-section">
       <div class="about-container reveal">
         <div class="about-left">
           <picture>
@@ -1907,7 +1974,7 @@
       </div>
     </section>
 
-    <section id="experience" class="section-shell mt-lg">
+    <section id="experience" class="section-shell mt-lg anchor-section">
       <div class="timeline-container reveal">
         <div class="exp-header-row">
           <div class="exp-header-left">
@@ -2026,7 +2093,7 @@
       </div>
     </section>
 
-    <section id="education" class="section-shell mt-md">
+    <section id="education" class="section-shell mt-md anchor-section">
       <div class="edu-wrapper reveal">
         <div class="decoration-ring"></div>
 
@@ -2201,10 +2268,10 @@
       </div>
     </section>
 
-    <section id="services" class="section-shell">
+    <section id="services" class="section-shell anchor-section">
       <div class="what-wrapper reveal">
         <section class="what-left">
-          <h2 class="section-title-large">What I do.</h2>
+          <h2 class="what-title">What I do.</h2>
           <p>
             I help leadership teams move from messy, manual work to clear, reliable
             systems. My focus is on <strong>executive operations, workflow design,
@@ -2287,71 +2354,114 @@
         </div>
 
         <div class="marquee-container" aria-hidden="true">
-        <div class="marquee-content" tabindex="0">
+        <div class="marquee-content">
 
             <div class="logo-item">
-              <img src="..." alt="Prominent Tec" loading="lazy">
-            </div>
+  <img
+    src="..."
+    alt="Prominent Tec"
+    loading="lazy"
+    width="160"
+    height="50"
+  >
+</div>
 
-            <div class="logo-item">
-              <img src="..." alt="Modern Accessories" loading="lazy">
-            </div>
+<div class="logo-item">
+  <img
+    src="..."
+    alt="Modern Accessories"
+    loading="lazy"
+    width="160"
+    height="50"
+  >
+</div>
 
-            <div class="logo-item">
-              <img src="..." alt="Texicon BD" loading="lazy">
-            </div>
+<div class="logo-item">
+  <img
+    src="..."
+    alt="Texicon BD"
+    loading="lazy"
+    width="160"
+    height="50"
+  >
+</div>
 
-            <div class="logo-item">
-              <img src="..." alt="Greenosoft" loading="lazy">
-            </div>
+<div class="logo-item">
+  <img
+    src="..."
+    alt="Greenosoft"
+    loading="lazy"
+    width="160"
+    height="50"
+  >
+</div>
 
-            <div class="logo-item">
-              <img src="..." alt="Greenotex" loading="lazy">
-            </div>
+<div class="logo-item">
+  <img
+    src="..."
+    alt="Greenotex"
+    loading="lazy"
+    width="160"
+    height="50"
+  >
+</div>
 
-            <div class="logo-item">
-              <img src="..." alt="Daricomma" loading="lazy">
-            </div>
+<div class="logo-item">
+  <img
+    src="..."
+    alt="Daricomma"
+    loading="lazy"
+    width="160"
+    height="50"
+  >
+</div>
 
-            <div class="logo-item" aria-hidden="true">
-              <img src="..." alt="" loading="lazy">
-            </div>
+<!-- Duplicated / decorative ones – keep aria-hidden + empty alt -->
+<div class="logo-item" aria-hidden="true">
+  <img src="..." alt="" loading="lazy" width="160" height="50">
+</div>
 
-            <div class="logo-item" aria-hidden="true">
-              <img src="..." alt="" loading="lazy">
-            </div>
+<div class="logo-item" aria-hidden="true">
+  <img src="..." alt="" loading="lazy" width="160" height="50">
+</div>
 
-            <div class="logo-item" aria-hidden="true">
-              <img src="..." alt="" loading="lazy">
-            </div>
+<div class="logo-item" aria-hidden="true">
+  <img src="..." alt="" loading="lazy" width="160" height="50">
+</div>
 
-            <div class="logo-item" aria-hidden="true">
-              <img src="..." alt="" loading="lazy">
-            </div>
+<div class="logo-item" aria-hidden="true">
+  <img src="..." alt="" loading="lazy" width="160" height="50">
+</div>
 
-            <div class="logo-item" aria-hidden="true">
-              <img src="..." alt="" loading="lazy">
-            </div>
+<div class="logo-item" aria-hidden="true">
+  <img src="..." alt="" loading="lazy" width="160" height="50">
+</div>
 
-            <div class="logo-item" aria-hidden="true">
-              <img src="..." alt="" loading="lazy">
-            </div>
+<div class="logo-item" aria-hidden="true">
+  <img src="..." alt="" loading="lazy" width="160" height="50">
+</div>
+
 
           </div>
         </div>
 
-        <ul class="sr-only">
-          <li>Prominent Tec</li>
-          <li>Modern Accessories</li>
-          <li>Texicon BD</li>
-          <li>Greenosoft</li>
-          <li>Greenotex</li>
-          <li>Daricomma</li>
-        </ul>
+        <ul
+  class="sr-only"
+  role="img"
+  aria-label="Trusted partners: Prominent Tec, Modern Accessories, Texicon BD, Greenosoft, Greenotex, and Daricomma."
+>
+  <li>Prominent Tec</li>
+  <li>Modern Accessories</li>
+  <li>Texicon BD</li>
+  <li>Greenosoft</li>
+  <li>Greenotex</li>
+  <li>Daricomma</li>
+</ul>
+
       </div>
     </section>
 
-    <section id="contact" class="section-shell reveal">
+    <section id="contact" class="section-shell reveal anchor-section">
       <div class="contact-wrapper">
         <div class="contact-left">
           <div class="contact-kicker">Let’s work together</div>
@@ -2593,3 +2703,4 @@
 
 </body>
 </html>
+
