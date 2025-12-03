@@ -364,7 +364,7 @@
 
 .hero-image {
   width: 100%;
-  max-width: 390px;        /* smaller than before so it doesn’t hang below the text */
+  max-width: 460px;        /* smaller than before so it doesn’t hang below the text */
   height: auto;            /* keep the real photo ratio – no stretching */
   border-radius: 30px;
   object-fit: contain;     /* don’t crop the shoulders */
@@ -533,20 +533,20 @@
     .about-left {
       flex: 2;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px 20px 20px 0;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0px 0px 0px 0;
     }
 
     .about-left img {
   width: 100%;
-  max-width: 380px;
-  max-height: 480px;      /* prevent it from becoming taller than the text card */
+  max-width: 480px;
+  max-height: 580px;      /* prevent it from becoming taller than the text card */
   height: auto;
   border-radius: 10px;
   object-fit: contain;
   display: block;
-  margin: 0 auto;
+  margin: 0;
 }
 
 
@@ -1907,6 +1907,17 @@
       }
     }
   </style>
+
+  <!-- ✅ GOOGLE ANALYTICS 4 (place it here, at the bottom of head) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XX8R0FKN5X"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XX8R0FKN5X');
+  </script>
+  <!-- END GA4 -->
+
 </head>
 
 <body>
@@ -1927,14 +1938,14 @@
           <a href="#contact">Contact</a>
         </nav>
 
-        <a
-          href="AbuRahatSabir-Resume.pdf"
-          class="btn-resume"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Download Resume
-        </a>
+<a
+  href="AbuRahatSabir-Resume.pdf"
+  class="btn-resume"
+  onclick="downloadResume(event)"
+>
+  Download Resume
+</a>
+
 
         <button
           class="nav-toggle"
@@ -2951,6 +2962,29 @@
       }
     });
   </script>
+<script>
+  function downloadResume(event) {
+    event.preventDefault();
+
+    // TRACKING
+    if (window.gtag) {
+      gtag('event', 'resume_download', {
+        event_category: 'engagement',
+        event_label: 'Resume PDF',
+        value: 1
+      });
+    }
+
+    // Force download
+    const a = document.createElement('a');
+    a.href = 'AbuRahatSabir-Resume.pdf';
+    a.download = 'AbuRahatSabir-Resume.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+</script>
+
 </body>
 </html>
 
