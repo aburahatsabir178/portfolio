@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => sectionObserver.observe(section));
   }
 
-});
+})
 
 
 
@@ -225,3 +225,4 @@ document.addEventListener('DOMContentLoaded', () => {
     workSections.forEach(section => observer.observe(section));
   }
 });
+
