@@ -1452,99 +1452,80 @@ header[role="banner"] {
 }
 
 
-
-
-
-/*  
-===========================================
-WORK PAGE — Hero, Sidebar, Layout, Cards
-Matches ARS brand, tone, spacing, and colors
-===========================================
-*/
-
-/* ========== VARIABLES (if not already defined) ========= */
-:root {
-  --accent: #FF5722;
-  --accent-light: rgba(255, 87, 34, 0.12);
-  --accent-soft: rgba(255, 87, 34, 0.08);
-
-  --text-strong: #1A1A1A;
-  --text-main: #444;
-  --text-muted: #6F6F6F;
-
-  --border: #E3E3E8;
-  --radius-lg: 22px;
-  --radius-md: 14px;
-
-  --shadow-card: 0 14px 40px rgba(0,0,0,0.08);
-  --shadow-hover: 0 18px 48px rgba(255,87,34,0.22);
-
-  --section-gap: 70px;
+/* ===============================
+WORK BREADCRUMB
+=============================== */
+.work-breadcrumb {
+  max-width: 1200px;
+  margin: 20px auto 0;
+  padding: 4px 4px 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 6px;
 }
 
-/* =========================================================
+.work-breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.work-breadcrumb a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ===============================
 WORK HERO
-========================================================= */
+=============================== */
 .work-hero {
-  padding-top: 60px;
-  padding-bottom: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .work-hero-inner {
   max-width: 1000px;
   margin: 0 auto;
   display: grid;
-  gap: 22px;
+  gap: 18px;
 }
 
 .work-hero-title {
-  font-size: 2.4rem;
+  font-size: 2.3rem;
   font-weight: 900;
   letter-spacing: -0.5px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   color: var(--text-strong);
 }
 
 .work-hero-sub {
   font-size: 1rem;
   line-height: 1.7;
-  max-width: 600px;
+  max-width: 620px;
   color: var(--text-muted);
-  margin-bottom: 6px;
 }
 
-.section-tag {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--accent);
-  font-weight: 700;
-  margin-bottom: 12px;
-  display: inline-block;
-}
-
-/* =========================================================
-LAYOUT — Sidebar + Main Content
-========================================================= */
+/* ===============================
+LAYOUT: SIDEBAR + CONTENT
+=============================== */
 .work-layout {
-  margin-top: var(--section-gap);
+  margin-top: 40px;
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 40px;
   align-items: flex-start;
 }
 
-/* =========================================================
+/* ===============================
 SIDEBAR
-========================================================= */
+=============================== */
 .work-sidebar {
   position: sticky;
   top: 100px;
-  background: #FFF;
+  background: #ffffff;
   padding: 20px;
-  border-radius: var(--radius-lg);
+  border-radius: 22px;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.04);
 }
 
 .work-sidebar-title {
@@ -1562,31 +1543,31 @@ SIDEBAR
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .work-sidebar-list a {
-  padding: 8px 12px;
+  padding: 7px 12px;
   border-radius: 999px;
   text-decoration: none;
   color: var(--text-main);
   font-size: 0.9rem;
-  transition: 0.25s ease;
+  transition: 0.22s ease;
 }
 
 .work-sidebar-list a:hover {
-  background: var(--accent-soft);
+  background: rgba(255, 87, 34, 0.08);
   color: var(--accent);
 }
 
 .work-sidebar-list a.is-active {
   background: var(--accent);
-  color: #FFF;
+  color: #ffffff;
 }
 
-/* =========================================================
-WORK SECTIONS
-========================================================= */
+/* ===============================
+SECTIONS
+=============================== */
 .work-section {
   margin-bottom: 60px;
 }
@@ -1594,7 +1575,7 @@ WORK SECTIONS
 .work-section-title {
   font-size: 1.5rem;
   font-weight: 900;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   color: var(--text-strong);
 }
 
@@ -1604,63 +1585,91 @@ WORK SECTIONS
   margin-bottom: 22px;
 }
 
-/* =========================================================
-WORK CARD GRID
-========================================================= */
+/* grid of cards */
 .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 26px;
+  gap: 24px;
 }
 
-/* =========================================================
-WORK CARD — MATCHES YOUR CURRENT CARD STYLE
-========================================================= */
+/* ===============================
+CARD WITH IMAGE
+=============================== */
 .work-card {
-  background: #FFF;
-  border-radius: var(--radius-lg);
-  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 22px;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-card);
-  transition: 0.28s ease;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.04);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  transition: 0.26s ease;
 }
 
 .work-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(255, 87, 34, 0.18);
   border-color: var(--accent);
 }
 
-/* Tag row */
+/* top image */
+.work-card-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f3f3f7;
+}
+
+.work-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1.02);
+  transition: transform 0.35s ease;
+}
+
+.work-card:hover .work-card-thumb img {
+  transform: scale(1.06);
+}
+
+/* body */
+.work-card-body {
+  padding: 18px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* tags */
 .work-card-tag-row {
   display: flex;
+  flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .work-card-tag {
-  background: var(--accent-light);
-  padding: 5px 10px;
+  background: rgba(255, 87, 34, 0.12);
+  padding: 4px 10px;
   border-radius: 999px;
   color: var(--accent);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .work-card-tag-soft {
-  background: #F3F3F7;
+  background: #f3f3f7;
   color: var(--text-muted);
 }
 
-/* Card text */
+/* text */
 .work-card-title {
   font-size: 1.05rem;
   font-weight: 800;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: var(--text-strong);
 }
 
@@ -1668,14 +1677,14 @@ WORK CARD — MATCHES YOUR CURRENT CARD STYLE
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--text-muted);
-  margin-bottom: 16px;
+  margin: 0 0 12px;
 }
 
-/* Meta list */
+/* meta list */
 .work-card-meta {
   list-style: none;
   padding: 0;
-  margin: 0 0 16px;
+  margin: 0 0 14px;
   font-size: 0.83rem;
   color: var(--text-muted);
   line-height: 1.4;
@@ -1685,7 +1694,7 @@ WORK CARD — MATCHES YOUR CURRENT CARD STYLE
   margin-top: 4px;
 }
 
-/* Footer link */
+/* footer link */
 .work-card-link {
   margin-top: auto;
   font-size: 0.87rem;
@@ -1695,10 +1704,48 @@ WORK CARD — MATCHES YOUR CURRENT CARD STYLE
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  transition: 0.2s ease;
+  transition: 0.18s ease;
 }
 
 .work-card-link:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+/* ===============================
+RESPONSIVE
+=============================== */
+@media (max-width: 900px) {
+  .work-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .work-sidebar {
+    position: static;
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .work-sidebar-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .work-hero-title {
+    font-size: 1.9rem;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-breadcrumb {
+    padding: 4px 10px 0;
+  }
+}
+
+
