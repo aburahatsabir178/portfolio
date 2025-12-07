@@ -1449,6 +1449,8 @@ header[role="banner"] {
   .col-line { display: none; }
   .col-details { padding-left: 0; }
 
+}
+
 
 /* =========================================
    WORK PAGE STYLES - Abu Rahat Sabir
@@ -1778,4 +1780,5 @@ header[role="banner"] {
         animation: none;
     }
 }
+
 
