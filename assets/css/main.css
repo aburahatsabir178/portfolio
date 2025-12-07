@@ -86,6 +86,15 @@ body {
   margin: 0 auto var(--section-gap-lg);
 }
 
+/* Add this to fix the Work page layout */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Adds safe space on mobile */
+  box-sizing: border-box;
+}
+
 /* Consistency Fix: Remove margins from first/last elements inside sections */
 .section-shell > *:first-child { margin-top: 0; }
 .section-shell > *:last-child { margin-bottom: 0; }
@@ -1540,3 +1549,4 @@ header[role="banner"] {
     .filter-btn { width: auto; padding: 8px 16px; background: white; border: 1px solid var(--border); border-radius: 99px; margin-bottom: 0; }
     .filter-btn.active { border-color: var(--text-main); }
 }
+
