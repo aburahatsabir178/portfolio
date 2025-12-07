@@ -205,4 +205,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const hash = window.location.hash.replace('#', '');
     if (hash) {
         // Check if the hash matches a valid filter
-        const validCategory =
+        const validCategory = [...filterBtns].some(btn => btn.dataset.filter === hash) ? hash : null;
+        
+        if (validCategory) {
+            filterProjects(validCategory);
+        }
+    }
+});
