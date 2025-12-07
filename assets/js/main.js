@@ -171,58 +171,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
-  // === WORK PAGE SIDEBAR LOGIC ===
-  const sidebar = document.querySelector('.work-sidebar');
-  const sidebarLinks = document.querySelectorAll('.work-sidebar-list a');
-  const workSections = document.querySelectorAll('.work-section[id]');
+    
+    // Selectors
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+    
+    // --- Filtering Logic ---
+    function filterProjects(category) {
+        
+        // 1. Update Buttons
+        filterBtns.forEach(btn => {
+            if (btn.dataset.filter === category) {
+                btn.classList.add('active');
+                btn.setAttribute('aria-selected', 'true');
+            } else {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-selected', 'false');
+            }
+        });
 
-  if (sidebar && sidebarLinks.length && workSections.length && 'IntersectionObserver' in window) {
-    // Smooth scrolling on click (respecting header offset using scroll-margin in CSS if you want)
-    sidebarLinks.forEach(link => {
-      link.addEventListener('click', (event) => {
-        const href = link.getAttribute('href');
-        if (!href || !href.startsWith('#')) return;
+        // 2. Show/Hide Cards with Animation
+        cards.forEach(card => {
+            // Remove animation class to reset
+            card.classList.remove('fade-in');
+            
+            // Force reflow to restart animation next time
+            void card.offsetWidth;
 
-        event.preventDefault();
-        const targetId = href.slice(1);
-        const target = document.getElementById(targetId);
-        if (!target) return;
+            if (category === 'all' || card.dataset.category === category) {
+                card.classList.remove('hidden');
+                card.classList.add('fade-in');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    }
 
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+    // --- Event Listeners ---
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.dataset.filter;
+            filterProjects(category);
+            
+            // Update URL hash without scrolling
+            if(history.pushState) {
+                history.pushState(null, null, category === 'all' ? ' ' : `#${category}`);
+            } else {
+                window.location.hash = category === 'all' ? '' : category;
+            }
+        });
     });
 
-    // Active state on scroll
-    const linkMap = new Map();
-    sidebarLinks.forEach(link => {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        linkMap.set(href.slice(1), link);
-      }
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        const id = entry.target.getAttribute('id');
-        if (!id) return;
-
-        // Remove active from all
-        sidebarLinks.forEach(l => l.classList.remove('is-active'));
-
-        // Add to current
-        const activeLink = linkMap.get(id);
-        if (activeLink) {
-          activeLink.classList.add('is-active');
+    // --- Deep Linking on Load ---
+    // Check if user came with a specific hashtag (e.g., work.html#automation)
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+        // Check if the hash matches a valid filter
+        const validCategory = [...filterBtns].some(btn => btn.dataset.filter === hash);
+        if (validCategory) {
+            filterProjects(hash);
         }
-      });
-    }, {
-      threshold: 0.35,
-      rootMargin: '0px 0px -40% 0px'
-    });
-
-    workSections.forEach(section => observer.observe(section));
-  }
+    }
 });
-
