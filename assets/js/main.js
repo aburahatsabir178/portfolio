@@ -162,63 +162,74 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+
+
+
+// =========================================
+//  WORK PAGE LOGIC: FILTERING & DEEP LINKING
+// =========================================
 document.addEventListener('DOMContentLoaded', () => {
-  // Selectors
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cards = document.querySelectorAll('.project-card');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.project-card');
+    const emptyState = document.getElementById('empty-state');
 
-  // --- Filtering Logic ---
-  function filterProjects(category) {
-    // 1. Update Buttons
-    filterBtns.forEach(btn => {
-      if (btn.dataset.filter === category) {
-        btn.classList.add('active');
-        btn.setAttribute('aria-selected', 'true');
-      } else {
-        btn.classList.remove('active');
-        btn.setAttribute('aria-selected', 'false');
-      }
-    });
+    // Only run if we are on the work page
+    if(filterBtns.length === 0) return;
 
-    // 2. Show/Hide Cards with Animation
-    cards.forEach(card => {
-      // Remove animation class to reset
-      card.classList.remove('fade-in');
-      // Force reflow to restart animation next time
-      void card.offsetWidth;
+    // 1. Function to Apply Filter
+    function applyFilter(category, updateUrl = true) {
+        let visibleCount = 0;
 
-      if (category === 'all' || card.dataset.category === category) {
-        card.classList.remove('hidden');
-        card.classList.add('fade-in');
-      } else {
-        card.classList.add('hidden');
-      }
-    });
-  }
+        // Toggle UI States
+        filterBtns.forEach(btn => {
+            const isSelected = btn.dataset.filter === category;
+            btn.classList.toggle('active', isSelected);
+            btn.setAttribute('aria-selected', isSelected);
+        });
 
-  // --- Event Listeners ---
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const category = btn.dataset.filter;
-      filterProjects(category);
+        // Show/Hide Cards
+        cards.forEach(card => {
+            // Reset animation for re-trigger
+            card.classList.remove('fade-in');
+            void card.offsetWidth; // Force reflow
 
-      // Update URL hash without scrolling
-      if(history.pushState) {
-        history.pushState(null, null, category === 'all' ? ' ' : `#${category}`);
-      } else {
-        window.location.hash = category === 'all' ? '' : category;
-      }
-    });
-  });
+            if (category === 'all' || card.dataset.category === category) {
+                card.classList.remove('hidden');
+                card.classList.add('fade-in');
+                visibleCount++;
+            } else {
+                card.classList.add('hidden');
+            }
+        });
 
-  // --- Deep Linking on Load ---
-  // Check if user came with a specific hashtag (e.g., work.html#automation)
-  const hash = window.location.hash.replace('#', '');
-  if (hash) {
-    // Check if the hash matches a valid filter
-    const validCategory = [...filterBtns].some(btn => btn.dataset.filter === hash);
-    if (validCategory) {
-      filterProjects(hash);
+        // Handle Empty State
+        if (emptyState) {
+            emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // Update URL Hash (Deep Linking)
+        if (updateUrl) {
+            const hash = category === 'all' ? ' ' : `#${category}`;
+            history.replaceState(null, null, hash);
+        }
     }
-  }
+
+    // 2. Event Listeners for Buttons
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            applyFilter(btn.dataset.filter);
+        });
+    });
+
+    // 3. Check Hash on Load (Deep Linking Support)
+    const hash = window.location.hash.replace('#', '');
+    if (hash) {
+        // Verify the hash matches a valid button to avoid errors
+        const validBtn = document.querySelector(`.filter-btn[data-filter="${hash}"]`);
+        if (validBtn) applyFilter(hash, false);
+    } else {
+        applyFilter('all', false);
+    }
 });
+
