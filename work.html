@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Showcase | Abu Rahat Sabir</title>
-    <meta name="description" content="A curated gallery of executive operations systems, automations, and digital workspaces built by Abu Rahat Sabir.">
+    <title>Work — Abu Rahat Sabir | Systems Architect</title>
+    <meta name="description" content="Portfolio of Executive Operations systems, Automations, and Digital Workspaces. Built for scale.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,276 +12,207 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="assets/css/main.css">
-    
-    <style>
-        /* Minimal reset for preview if global styles aren't present */
-        :root {
-            --accent: #FF5722;
-            --accent-hover: #E64A19;
-            --accent-soft: rgba(255, 87, 34, 0.08);
-            --bg-body: #ffffff;
-            --bg-soft: #f6f7fb;
-            --text-main: #111111;
-            --text-strong: #222222;
-            --text-muted: #6b6b6b;
-            --border: #eaeaea;
-        }
-        body { font-family: 'Inter', sans-serif; margin: 0; color: var(--text-main); }
-        a { text-decoration: none; color: inherit; }
-        /* Button styles assumed from global */
-        .btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 24px; border-radius: 50px; font-weight: 600; transition: all 0.2s; cursor: pointer; border: 1px solid transparent; }
-        .btn-outline { border-color: var(--border); background: transparent; color: var(--text-strong); }
-        .btn-outline:hover { border-color: var(--text-strong); color: var(--text-strong); }
-    </style>
 </head>
 <body>
 
-    <a href="#main-content" class="skip-link" style="position:absolute; top:-100px; left:0; background:var(--accent); color:white; padding:10px; z-index:999;">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <header role="banner">
-      <div class="top-bar">
-        <a href="index.html#home" class="logo-circle" aria-label="Back to home">A</a>
-
-        <div class="top-bar-right">
-          <nav class="top-nav" aria-label="Primary">
-            <a href="index.html#home">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#experience">Experience</a>
-            <a href="index.html#education">Education</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#process">Process</a>
-            <a href="index.html#contact">Contact</a>
-            <a href="work.html" class="active">Work</a>
-          </nav>
-
-          <a
-            href="AbuRahatSabir-Resume.pdf"
-            class="btn btn-outline"
-            onclick="downloadResume && downloadResume(event)"
-          >
-            Download Resume
-          </a>
-
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-label="Toggle navigation menu"
-            aria-expanded="false"
-          >
-            <span class="nav-toggle-icon" aria-hidden="true"></span>
-          </button>
+        <div class="container nav-inner">
+            <a href="index.html" class="logo" aria-label="Abu Rahat Sabir Home">
+                A<span>R</span>S.
+            </a>
+            <nav class="primary-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="work.html" class="active" aria-current="page">Work</a>
+                <a href="index.html#contact" class="btn-cta">Let's Talk</a>
+            </nav>
         </div>
-      </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
         
-        <section class="work-hero">
+        <section class="hero" aria-labelledby="hero-heading">
             <div class="container">
-                <nav aria-label="Breadcrumb" class="breadcrumb">
-                    <a href="index.html">Home</a> <span aria-hidden="true">/</span> <span class="current">Work Showcase</span>
-                </nav>
-                <h1>Systems, automations & <br>tools I’ve built.</h1>
-                <p class="hero-sub">I build the engines that run businesses. A curated gallery of executive dashboards, workflow scripts, and digital hubs designed for scale.</p>
+                <h1 id="hero-heading">Systems, automations & <br>tools I’ve built.</h1>
+                <p>A curated showcase of executive operations systems, workflow scripts, and digital workspaces designed to reduce busywork and scale impact.</p>
                 
-                <div class="hero-chips">
-                    <span class="chip"><i class="fa-solid fa-user-tie"></i> Executive Ops</span>
-                    <span class="chip"><i class="fa-solid fa-bolt"></i> Automation</span>
-                    <span class="chip"><i class="fa-solid fa-table"></i> Excel & Sheets</span>
-                    <span class="chip"><i class="fa-solid fa-folder-tree"></i> Documentation</span>
+                <div class="hero-badges" aria-label="Core competencies">
+                    <span class="badge"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Executive Ops</span>
+                    <span class="badge"><i class="fa-solid fa-bolt" aria-hidden="true"></i> Automation</span>
+                    <span class="badge"><i class="fa-solid fa-table" aria-hidden="true"></i> Excel & Data</span>
+                    <span class="badge"><i class="fa-solid fa-sitemap" aria-hidden="true"></i> Digital Hubs</span>
                 </div>
             </div>
         </section>
 
-        <div class="container work-layout">
+        <div class="container layout-wrapper">
             
-            <aside class="work-sidebar">
-                <div class="sticky-wrapper">
-                    <h3 class="sidebar-title">Categories</h3>
-                    <div class="filter-group" role="tablist">
-                        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">
-                            <i class="fa-solid fa-layer-group"></i> All Projects
-                        </button>
-                        <button class="filter-btn" data-filter="exec" role="tab" aria-selected="false">
-                            <i class="fa-solid fa-briefcase"></i> Executive Ops
-                        </button>
-                        <button class="filter-btn" data-filter="automation" role="tab" aria-selected="false">
-                            <i class="fa-solid fa-robot"></i> Data & Automation
-                        </button>
-                        <button class="filter-btn" data-filter="digital" role="tab" aria-selected="false">
-                            <i class="fa-solid fa-sitemap"></i> Digital Workspace
-                        </button>
-                    </div>
+            <aside class="filter-sidebar" role="region" aria-label="Filter projects">
+                <div class="sidebar-title">Categories</div>
+                <div class="filter-group" role="tablist">
+                    <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" aria-controls="grid">
+                        <i class="fa-solid fa-layer-group"></i> All Systems
+                    </button>
+                    <button class="filter-btn" data-filter="executive" role="tab" aria-selected="false" aria-controls="grid">
+                        <i class="fa-solid fa-briefcase"></i> Executive Ops
+                    </button>
+                    <button class="filter-btn" data-filter="automation" role="tab" aria-selected="false" aria-controls="grid">
+                        <i class="fa-solid fa-robot"></i> Data & Scripts
+                    </button>
+                    <button class="filter-btn" data-filter="digital" role="tab" aria-selected="false" aria-controls="grid">
+                        <i class="fa-solid fa-sitemap"></i> Digital Hubs
+                    </button>
                 </div>
             </aside>
 
-            <section class="work-grid" id="projects-grid">
+            <section id="grid" class="grid-system" aria-live="polite">
                 
-                <article class="project-card" data-category="exec">
-                    <div class="card-visual">
-                        <span class="card-badge">Reporting System</span>
-                        <i class="visual-icon fa-solid fa-chart-pie"></i>
+                <article class="project-card" data-category="executive">
+                    <div class="card-header">
+                        <span class="category-tag">Reporting</span>
+                        <i class="card-icon fa-solid fa-chart-pie" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <div class="card-meta">Excel • Power Query • VBA</div>
-                        <h2 class="card-title">Executive Board Pack Generator</h2>
-                        <p class="card-desc">Unified master-file that pulls raw data from 3 departmental CSVs to generate print-ready weekly board meeting visuals automatically.</p>
+                        <div class="tech-stack">Excel • Power Query • VBA</div>
+                        <h3>Executive Board Pack Generator</h3>
+                        <p>Unified master-file that pulls raw data from 3 departmental CSVs to generate print-ready weekly board meeting visuals automatically.</p>
                         
-                        <div class="card-results">
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Reduced prep time from 4h to 15m</li>
-                                <li><i class="fa-solid fa-check"></i> 100% data accuracy (no copy-paste)</li>
-                            </ul>
+                        <div class="impact-box">
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> Reduced prep time from 4h to 15m</div>
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> 100% data accuracy (no copy-paste)</div>
                         </div>
-                        
+
                         <div class="card-footer">
-                            <a href="#" class="text-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="#" class="link-case" aria-label="Read case study about Board Pack Generator">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
 
                 <article class="project-card" data-category="automation">
-                    <div class="card-visual">
-                        <span class="card-badge">Workflow Automation</span>
-                        <i class="visual-icon fa-brands fa-google"></i>
+                    <div class="card-header">
+                        <span class="category-tag">Workflow</span>
+                        <i class="card-icon fa-brands fa-google" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <div class="card-meta">Apps Script • Sheets • Gmail</div>
-                        <h2 class="card-title">Auto-Invoicing Dispatcher</h2>
-                        <p class="card-desc">Script monitoring a Sheet for approved orders. Automatically generates PDF invoices, saves to Drive, and emails the client.</p>
+                        <div class="tech-stack">GAS • Sheets • Gmail API</div>
+                        <h3>Auto-Invoicing Dispatcher</h3>
+                        <p>Script monitoring a Sheet for approved orders. Automatically generates PDF invoices, saves to Drive, and emails the client with specific attachments.</p>
                         
-                        <div class="card-results">
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Eliminated 5hrs/week manual entry</li>
-                                <li><i class="fa-solid fa-check"></i> Instant client notification trigger</li>
-                            </ul>
+                        <div class="impact-box">
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> Eliminated 5hrs/week manual entry</div>
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> Instant client notification system</div>
                         </div>
-                        
+
                         <div class="card-footer">
-                            <a href="#" class="text-link">View Logic Flow <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="#" class="link-case" aria-label="Read case study about Auto Invoicing">View Logic Flow <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
 
                 <article class="project-card" data-category="digital">
-                    <div class="card-visual">
-                        <span class="card-badge">Knowledge Management</span>
-                        <i class="visual-icon fa-solid fa-book-open"></i>
+                    <div class="card-header">
+                        <span class="category-tag">Knowledge</span>
+                        <i class="card-icon fa-solid fa-book-open" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <div class="card-meta">Notion / SharePoint</div>
-                        <h2 class="card-title">Company SOP Digital Hub</h2>
-                        <p class="card-desc">Transitioned a client from static PDF manuals to an interactive, searchable digital knowledge base for employee onboarding.</p>
+                        <div class="tech-stack">Notion / SharePoint</div>
+                        <h3>Company SOP Digital Hub</h3>
+                        <p>Transitioned client from static PDF manuals to an interactive, searchable digital knowledge base for employee onboarding and reference.</p>
                         
-                        <div class="card-results">
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Reduced onboarding ramp time by 30%</li>
-                                <li><i class="fa-solid fa-check"></i> Mobile-accessible for field staff</li>
-                            </ul>
+                        <div class="impact-box">
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> Reduced onboarding ramp time by 30%</div>
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> Mobile-accessible for field staff</div>
                         </div>
-                        
+
                         <div class="card-footer">
-                            <a href="#" class="text-link">View Structure <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="#" class="link-case" aria-label="Read case study about SOP Hub">View Structure <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
 
                 <article class="project-card" data-category="automation">
-                    <div class="card-visual">
-                        <span class="card-badge">Finance Tool</span>
-                        <i class="visual-icon fa-solid fa-receipt"></i>
+                    <div class="card-header">
+                        <span class="category-tag">Finance</span>
+                        <i class="card-icon fa-solid fa-receipt" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <div class="card-meta">Google Forms • Slack API</div>
-                        <h2 class="card-title">Expense Approval System</h2>
-                        <p class="card-desc">Multi-stage approval system where form submissions trigger Slack alerts to managers. Approvals deduct from budget in real-time.</p>
+                        <div class="tech-stack">Forms • Slack API</div>
+                        <h3>Expense Approval System</h3>
+                        <p>Multi-stage approval system where form submissions trigger Slack alerts to managers. Approvals deduct from budget in real-time.</p>
                         
-                        <div class="card-results">
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Replaced chaotic email chains</li>
-                                <li><i class="fa-solid fa-check"></i> Live budget utilization view</li>
-                            </ul>
+                        <div class="impact-box">
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> Replaced chaotic email chains</div>
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> Live budget utilization view</div>
                         </div>
-                        
+
                         <div class="card-footer">
-                            <a href="#" class="text-link">See Dashboard <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="#" class="link-case" aria-label="Read case study about Expense System">View Dashboard <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
 
-                 <article class="project-card" data-category="exec">
-                    <div class="card-visual">
-                        <span class="card-badge">Protocol</span>
-                        <i class="visual-icon fa-regular fa-calendar-check"></i>
+                <article class="project-card" data-category="executive">
+                    <div class="card-header">
+                        <span class="category-tag">Protocol</span>
+                        <i class="card-icon fa-regular fa-calendar-check" aria-hidden="true"></i>
                     </div>
                     <div class="card-body">
-                        <div class="card-meta">Outlook • OneNote</div>
-                        <h2 class="card-title">CEO Calendar Protocol</h2>
-                        <p class="card-desc">A rigid scheduling system ensuring every meeting invite includes a mandatory pre-read link, objective summary, and priority tag.</p>
+                        <div class="tech-stack">Outlook • OneNote</div>
+                        <h3>CEO Calendar Protocol</h3>
+                        <p>A rigid scheduling system ensuring every meeting invite includes a mandatory pre-read link, objective summary, and priority tag.</p>
                         
-                        <div class="card-results">
-                            <ul>
-                                <li><i class="fa-solid fa-check"></i> Zero "no-agenda" meetings</li>
-                                <li><i class="fa-solid fa-check"></i> 20% more focus time recovered</li>
-                            </ul>
+                        <div class="impact-box">
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> Zero "no-agenda" meetings</div>
+                            <div class="impact-item"><i class="fa-solid fa-check-circle"></i> 20% more focus time recovered</div>
                         </div>
-                        
+
                         <div class="card-footer">
-                            <a href="#" class="text-link">Read Case Study <i class="fa-solid fa-arrow-right"></i></a>
+                            <a href="#" class="link-case" aria-label="Read case study about Calendar Protocol">Read Protocol <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </article>
+
+                <div class="empty-state" id="empty-state">
+                    <h3>No projects found in this category.</h3>
+                    <p>Try selecting a different filter.</p>
+                </div>
 
             </section>
         </div>
     </main>
 
-    <footer class="ars-footer" role="contentinfo">
-      <div class="ars-footer-grid">
-        <div class="ars-footer-logo-block">
-          <div style="font-weight:800; font-size:1.5rem; color:var(--text-strong);">A<span style="color:var(--accent)">R</span>S.</div>
+    <footer style="background:#0F172A; color:white; padding:60px 0; margin-top:60px;">
+        <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:30px;">
+            <div>
+                <div style="font-weight:800; font-size:1.5rem; margin-bottom:12px;">A<span>R</span>S.</div>
+                <p style="color:#94A3B8; max-width:300px;">Building the digital infrastructure that helps executives lead and companies scale.</p>
+            </div>
+            <div style="display:flex; gap:40px;">
+                <div>
+                    <h4 style="color:#64748B; text-transform:uppercase; font-size:0.75rem; letter-spacing:1px; margin-bottom:16px;">Menu</h4>
+                    <ul style="color:#E2E8F0; font-size:0.9rem; line-height:2;">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="work.html">Work</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color:#64748B; text-transform:uppercase; font-size:0.75rem; letter-spacing:1px; margin-bottom:16px;">Social</h4>
+                    <ul style="color:#E2E8F0; font-size:0.9rem; line-height:2;">
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Email</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-
-        <div>
-          <div class="ars-footer-title">Navigation</div>
-          <nav aria-label="Footer - primary navigation">
-            <ul class="ars-footer-links">
-              <li><a href="index.html#home">Home</a></li>
-              <li><a href="index.html#experience">Experience</a></li>
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="index.html#about">About</a></li>
-              <li><a href="work.html">Work</a></li>
-            </ul>
-          </nav>
+        <div class="container" style="border-top:1px solid #1E293B; margin-top:40px; padding-top:20px; font-size:0.85rem; color:#64748B;">
+            &copy; 2025 Abu Rahat Sabir. All rights reserved.
         </div>
-
-        <div>
-          <div class="ars-footer-title">Categories</div>
-          <nav aria-label="Footer - categories">
-            <ul class="ars-footer-links">
-              <li><a href="work.html#exec">Executive Operations</a></li>
-              <li><a href="work.html#automation">Data &amp; Automation</a></li>
-              <li><a href="work.html#digital">Digital Workspace</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div>
-          <div class="ars-footer-title">Elsewhere</div>
-          <nav aria-label="Footer - elsewhere">
-            <ul class="ars-footer-links">
-              <li><a href="index.html#experience">Case Studies</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <div class="ars-footer-bottom">
-        © 2025 Abu Rahat Sabir. All rights reserved.
-      </div>
     </footer>
 
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
