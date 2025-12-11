@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 User-agent: *
 Allow: /
-=======
-User-agent: *
-Allow: /
->>>>>>> 445842a15baf1e32673ed06248b67473df1219c2
+
 Sitemap: https://aburahatsabir.github.io/portfolio/sitemap.xml
