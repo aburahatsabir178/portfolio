@@ -1,1 +1,48 @@
 
+<header role="banner">
+  <div class="top-bar">
+    <a
+      href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#home{% else %}#home{% endif %}"
+      class="logo-circle"
+      aria-label="{% if page.url == '/work.html' %}Back to home{% else %}Back to top{% endif %}"
+    >
+      A
+    </a>
+
+    <div class="top-bar-right">
+      <nav class="top-nav" aria-label="Primary">
+        <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#home{% else %}#home{% endif %}">Home</a>
+        <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#about{% else %}#about{% endif %}">About</a>
+        <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#experience{% else %}#experience{% endif %}">Experience</a>
+        <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#education{% else %}#education{% endif %}">Education</a>
+
+        <a
+          href="{{ site.baseurl }}/work.html"
+          {% if page.url == '/work.html' %}class="active" aria-current="page"{% endif %}
+        >
+          Work
+        </a>
+
+        <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#process{% else %}#process{% endif %}">Process</a>
+        <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#services{% else %}#services{% endif %}">Services</a>
+        <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#contact{% else %}#contact{% endif %}">Contact</a>
+      </nav>
+
+      <a
+        href="{{ site.baseurl }}/AbuRahatSabir-Resume.pdf"
+        class="btn btn-outline"
+      >
+        Download Resume
+      </a>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <span class="nav-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
