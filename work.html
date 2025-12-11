@@ -1,3 +1,7 @@
+---
+layout: none
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -116,40 +120,7 @@
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header role="banner">
-      <div class="top-bar">
-        <a href="index.html#home" class="logo-circle" aria-label="Back to home">A</a>
-
-        <div class="top-bar-right">
-          <nav class="top-nav" aria-label="Primary">
-            <a href="index.html#home">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#experience">Experience</a>
-            <a href="index.html#education">Education</a>
-            <a href="work.html" class="active" aria-current="page">Work</a>
-            <a href="index.html#process">Process</a>
-            <a href="index.html#services">Services</a>
-            <a href="index.html#contact">Contact</a>
-          </nav>
-
-          <a
-            href="AbuRahatSabir-Resume.pdf"
-            class="btn btn-outline"
-          >
-            Download Resume
-          </a>
-
-          <button
-            class="nav-toggle"
-            type="button"
-            aria-label="Toggle navigation menu"
-            aria-expanded="false"
-          >
-            <span class="nav-toggle-icon" aria-hidden="true"></span>
-          </button>
-        </div>
-      </div>
-    </header>
+    {% include header.html %}
 
     <main id="main-content" tabindex="-1">
         
@@ -338,61 +309,8 @@
         </div>
     </main>
 
-    <footer class="ars-footer" role="contentinfo">
-      <div class="ars-footer-grid">
-        <div class="ars-footer-logo-block">
-          <picture>
-            <source srcset="images/footer-logo.webp" type="image/webp">
-            <img
-              src="images/footer-logo.webp"
-              class="ars-footer-logo"
-              width="180"
-              height="48"
-              loading="lazy"
-              alt="ARS monogram logo"
-            >
-          </picture>
-        </div>
+    {% include footer.html %}
 
-        <div>
-          <div class="ars-footer-title">Navigation</div>
-          <nav aria-label="Footer - primary navigation">
-            <ul class="ars-footer-links">
-              <li><a href="index.html#home">Home</a></li>
-              <li><a href="index.html#experience">Experience</a></li>
-              <li><a href="index.html#services">Services</a></li>
-              <li><a href="index.html#about">About</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div>
-          <div class="ars-footer-title">Categories</div>
-          <nav aria-label="Footer - categories">
-            <ul class="ars-footer-links">
-              <li><a href="#grid" data-filter-target="executive" class="filter-anchor">Executive Operations</a></li>
-              <li><a href="#grid" data-filter-target="automation" class="filter-anchor">Data &amp; Automation</a></li>
-              <li><a href="#grid" data-filter-target="digital" class="filter-anchor">Digital Workspace</a></li>
-            </ul>
-          </nav>
-        </div>
-
-        <div>
-          <div class="ars-footer-title">Elsewhere</div>
-          <nav aria-label="Footer - elsewhere">
-            <ul class="ars-footer-links">
-              <li><a href="index.html#experience">Case Studies</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <div class="ars-footer-bottom">
-        © 2025 Abu Rahat Sabir. All rights reserved.
-      </div>
-    </footer>
-  
-  
     <script src="https://kit.fontawesome.com/6d23f536e4.js" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
 </body>
