@@ -1,1 +1,100 @@
+<footer class="ars-footer" role="contentinfo">
+  <div class="ars-footer-grid">
+    <div class="ars-footer-logo-block">
+      <picture>
+        <source srcset="{{ site.baseurl }}/images/footer-logo.webp" type="image/webp">
+        <img
+          src="{{ site.baseurl }}/images/footer-logo.webp"
+          class="ars-footer-logo"
+          width="180"
+          height="48"
+          loading="lazy"
+          alt="ARS monogram logo"
+        >
+      </picture>
+    </div>
+
+    <div>
+      <div class="ars-footer-title">Navigation</div>
+      <nav aria-label="Footer - primary navigation">
+        <ul class="ars-footer-links">
+          <li>
+            <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#home{% else %}#home{% endif %}">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#experience{% else %}#experience{% endif %}">
+              Experience
+            </a>
+          </li>
+          <li>
+            <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#services{% else %}#services{% endif %}">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#about{% else %}#about{% endif %}">
+              About
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div>
+      <div class="ars-footer-title">Categories</div>
+
+      {% if page.url == '/work.html' %}
+        <!-- Work page: footer categories hook into the project filters -->
+        <nav aria-label="Footer - categories">
+          <ul class="ars-footer-links">
+            <li>
+              <a href="#grid" data-filter-target="executive" class="filter-anchor">
+                Executive Operations
+              </a>
+            </li>
+            <li>
+              <a href="#grid" data-filter-target="automation" class="filter-anchor">
+                Data &amp; Automation
+              </a>
+            </li>
+            <li>
+              <a href="#grid" data-filter-target="digital" class="filter-anchor">
+                Digital Workspace
+              </a>
+            </li>
+          </ul>
+        </nav>
+      {% else %}
+        <!-- Home and other pages: original section-based categories -->
+        <nav aria-label="Footer - categories">
+          <ul class="ars-footer-links">
+            <li><a href="#experience">Executive Operations</a></li>
+            <li><a href="#education">Data &amp; Automation</a></li>
+            <li><a href="#process">Digital Workspace</a></li>
+            <li><a href="#services">Content &amp; Design</a></li>
+          </ul>
+        </nav>
+      {% endif %}
+    </div>
+
+    <div>
+      <div class="ars-footer-title">Elsewhere</div>
+      <nav aria-label="Footer - elsewhere">
+        <ul class="ars-footer-links">
+          <li>
+            <a href="{% if page.url == '/work.html' %}{{ site.baseurl }}/#experience{% else %}#experience{% endif %}">
+              Case Studies
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="ars-footer-bottom">
+    © 2025 Abu Rahat Sabir. All rights reserved.
+  </div>
+</footer>
 
