@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aburahatsabir.github.io/portfolio/</loc>
@@ -6,13 +6,4 @@
   <url>
     <loc>https://aburahatsabir.github.io/portfolio/work.html</loc>
   </url>
-=======
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://aburahatsabir.github.io/portfolio/</loc>
-  </url>
-  <url>
-    <loc>https://aburahatsabir.github.io/portfolio/work.html</loc>
-  </url>
->>>>>>> 445842a15baf1e32673ed06248b67473df1219c2
 </urlset>
