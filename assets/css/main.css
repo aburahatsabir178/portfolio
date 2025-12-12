@@ -29,6 +29,7 @@
   --space-6: 24px;
   --space-7: 28px;
   --space-8: 32px;
+  --space-9: 36px; /* add */
   --space-10: 40px;
   --space-12: 48px;
   --space-15: 60px;  /* Matches section-gap-md */
@@ -49,6 +50,7 @@
   --radius-md: 14px;
   --radius-lg: 18px;
   --radius-xl: 24px;
+  --radius-2xl: 30px; /* add this */
   --radius-pill: 999px;
 
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
@@ -341,7 +343,7 @@ header[role="banner"] {
   width: 100%;
   max-width: 460px;
   height: auto;
-  border-radius: 30px;
+  border-radius: var(--radius-2xl);
   object-fit: contain;
   box-shadow: 20px 20px 0 rgba(var(--accent-rgb), 0.1);
   transition: var(--transition);
@@ -364,7 +366,7 @@ header[role="banner"] {
   font-weight: 800;
   line-height: 1.1;
   margin: 0 0 var(--space-6) 0; /* 24px */
-  background: linear-gradient(90deg, #111, #555);
+  background: linear-gradient(90deg, var(--text-main), var(--text-muted));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -1442,9 +1444,9 @@ header[role="banner"] {
 
   .what-wrapper {
     grid-template-columns: 1fr;
-    gap: 36px;
-    padding: 32px 24px 40px;
-    border-radius: 18px;
+    gap: var(--space-9);
+    padding: var(--space-8) var(--space-6) var(--space-10);
+    border-radius: var(--radius-lg);
   }
   .what-title { font-size: 32px; }
 

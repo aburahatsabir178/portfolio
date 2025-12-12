@@ -19,26 +19,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // --- MOBILE NAVIGATION ---
-  const navToggle = document.querySelector('.nav-toggle');
-  const topNav = document.querySelector('.top-nav');
+// --- MOBILE NAVIGATION (A11Y-IMPROVED) ---
+const navToggle = document.querySelector('.nav-toggle');
+const topNav = document.querySelector('.top-nav');
 
-  if (navToggle && topNav) {
-    navToggle.addEventListener('click', () => {
-      const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', String(!isOpen));
-      topNav.classList.toggle('is-open', !isOpen);
-    });
+if (navToggle && topNav) {
+  const navLinks = Array.from(topNav.querySelectorAll('a'));
 
-    document.querySelectorAll('.top-nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          navToggle.setAttribute('aria-expanded', 'false');
-          topNav.classList.remove('is-open');
-        }
-      });
-    });
+  function openMenu() {
+    navToggle.setAttribute('aria-expanded', 'true');
+    topNav.classList.add('is-open');
+
+    // Move keyboard focus into the menu (first link)
+    navLinks[0]?.focus();
   }
+
+  function closeMenu({ returnFocus = true } = {}) {
+    navToggle.setAttribute('aria-expanded', 'false');
+    topNav.classList.remove('is-open');
+
+    // Return focus to toggle so the user doesn't "lose" focus
+    if (returnFocus) navToggle.focus();
+  }
+
+  function isMenuOpen() {
+    return navToggle.getAttribute('aria-expanded') === 'true';
+  }
+
+  navToggle.addEventListener('click', () => {
+    if (isMenuOpen()) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Close after selecting a link (mobile only)
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 768 && isMenuOpen()) {
+        closeMenu({ returnFocus: false });
+      }
+    });
+  });
+
+  // ESC closes the menu
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && isMenuOpen()) {
+      closeMenu();
+    }
+  });
+
+  // Clicking outside closes the menu
+  document.addEventListener('click', (e) => {
+    if (!isMenuOpen()) return;
+
+    const clickedInsideMenu = topNav.contains(e.target);
+    const clickedToggle = navToggle.contains(e.target);
+
+    if (!clickedInsideMenu && !clickedToggle) {
+      closeMenu({ returnFocus: false });
+    }
+  });
+}
+
 
   // =========================================
   // 2. HOME PAGE LOGIC (Scroll & Stats)
@@ -169,11 +213,12 @@ if (statsSection && stats.length) {
         : `${visibleCount} project${visibleCount > 1 ? 's' : ''} shown.`;
   }
 
-      // URL hash (for deep links)
-      if (updateUrl) {
-        const hash = category === 'all' ? ' ' : `#${category}`;
-        history.replaceState(null, null, hash);
-      }
+        // URL hash (for deep links)
+        if (updateUrl) {
+          const hash = category === 'all' ? '' : `#${encodeURIComponent(category)}`;
+          history.replaceState(null, '', `${window.location.pathname}${hash}`);
+        }
+
 
       // Done updating
       if (grid) grid.setAttribute('aria-busy', 'false');
@@ -204,14 +249,20 @@ if (statsSection && stats.length) {
       });
     });
 
-    // Initial state (hash support)
-    const initialHash = window.location.hash.replace('#', '');
-    if (initialHash) {
-      applyFilter(initialHash, false);
-    } else {
-      applyFilter('all', false);
-    }
-  }
+        // Initial state (hash support)
+        const rawHash = (window.location.hash || '').slice(1); // remove leading '#'
+        const initialHash = decodeURIComponent(rawHash).trim();
+
+        // Build a whitelist of valid categories from your UI + cards
+        const validCategories = new Set(['all']);
+        heroFilters.forEach(btn => validCategories.add((btn.dataset.filter || '').trim()));
+        cards.forEach(card => validCategories.add((card.dataset.category || '').trim()));
+
+        // Use hash only if it's a known category; otherwise fall back to all
+        const initialCategory = validCategories.has(initialHash) ? initialHash : 'all';
+        applyFilter(initialCategory, false);
+
+          }
 
   // =========================================
   // 4. ACTIVE LINK HANDLER (SCROLL SPY + PAGE DETECTION)
@@ -246,8 +297,9 @@ if (statsSection && stats.length) {
         activateLink(link);
       }
     });
-  } else {
-    // On Home page → scroll spy
+} else {
+  // On Home page → scroll spy
+  if ('IntersectionObserver' in window) {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
@@ -259,14 +311,49 @@ if (statsSection && stats.length) {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
           const matchingLink = document.querySelector(`.top-nav a[href="#${id}"]`);
-          if (matchingLink) {
-            activateLink(matchingLink);
-          }
+          if (matchingLink) activateLink(matchingLink);
         }
       });
     }, observerOptions);
 
     sections.forEach(section => observer.observe(section));
+
+  } else {
+    // Fallback: simple scroll-based spy (throttled via rAF)
+    let ticking = false;
+
+    function updateActiveSection() {
+      ticking = false;
+
+      // pick a "scan line" ~35% down the viewport
+      const scanY = window.innerHeight * 0.35;
+
+      let currentId = null;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= scanY && rect.bottom >= scanY) {
+          currentId = section.id;
+        }
+      });
+
+      if (currentId) {
+        const matchingLink = document.querySelector(`.top-nav a[href="#${currentId}"]`);
+        if (matchingLink) activateLink(matchingLink);
+      }
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(updateActiveSection);
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    updateActiveSection(); // set initial state
   }
+}
+
 
 }); // 👈 single, final close for DOMContentLoaded
